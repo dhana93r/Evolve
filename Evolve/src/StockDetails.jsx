@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Container, Typography, Box, Stack, Button, MenuItem, Select, FormControl, InputLabel, Paper, Chip } from '@mui/material';
-import { calculateFairValue } from './calc';
+import { Container, Typography, Box, Stack, Button, MenuItem, Select, FormControl, InputLabel, Paper, Chip, Card, CardContent } from '@mui/material';
+import { calculateFairValue, getRecommendation } from './calc';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
-
-const recommendationIcon = (rec) => rec === 'consider' ? '✅' : '🚫';
 
 const StockDetails = () => {
   const { symbol } = useParams();
@@ -38,53 +36,69 @@ const StockDetails = () => {
   if (!stock) return <Typography>Stock not found.</Typography>;
   const fairValue10 = calculateFairValue(stock, 'pe10');
   const fairValue5 = calculateFairValue(stock, 'pe5');
+  const recommendation = getRecommendation(stock);
 
   return (
-    <Container maxWidth="sm" sx={{ py: 4 }}>
-      <Paper sx={{ p: 3, mb: 3 }}>
-        <Stack direction="row" alignItems="center" spacing={2}>
-          <Typography variant="h5" fontWeight={700}>{stock.name} ({stock.symbol})</Typography>
-          <Chip label={stock.recommendation === 'consider' ? 'Consider' : 'Not Consider'} icon={<span>{recommendationIcon(stock.recommendation)}</span>} color={stock.recommendation === 'consider' ? 'success' : 'error'} />
-        </Stack>
-        <Typography variant="subtitle1" color="text.secondary">{stock.industry}</Typography>
-        <Box mt={2}>
-          <Typography>PE: {stock.pe}</Typography>
-          <Typography>EPS: {stock.eps}</Typography>
-          <Typography>Price: {stock.price}</Typography>
-          <Typography>Median 10yr PE: {stock.pe10}</Typography>
-          <Typography>Median 5yr PE: {stock.pe5}</Typography>
-          <Typography sx={{ fontWeight: 600, color: 'primary.main' }}>Fair Value (10yr): {fairValue10}</Typography>
-          <Typography sx={{ fontWeight: 600, color: 'secondary.main' }}>Fair Value (5yr): {fairValue5}</Typography>
-        </Box>
-      </Paper>
-      <Paper sx={{ p: 3 }}>
-        <Stack direction="row" spacing={2} mb={2}>
-          <FormControl size="small">
-            <InputLabel>Year</InputLabel>
-            <Select value={year} label="Year" onChange={e => setYear(e.target.value)}>
-              {[...new Set((stock.quarters||[]).map(q => q.year))].map(y => <MenuItem key={y} value={y}>{y}</MenuItem>)}
-            </Select>
-          </FormControl>
-          <FormControl size="small">
-            <InputLabel>Quarter</InputLabel>
-            <Select value={quarter} label="Quarter" onChange={e => setQuarter(e.target.value)}>
-              {[...new Set((stock.quarters||[]).map(q => q.quarter))].map(q => <MenuItem key={q} value={q}>{q}</MenuItem>)}
-            </Select>
-          </FormControl>
-        </Stack>
-        <ResponsiveContainer width="100%" height={250}>
-          <BarChart data={chartData} margin={{ top: 10, right: 10, left: 0, bottom: 10 }}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="quarter" />
-            <YAxis />
-            <Tooltip />
-            <Bar dataKey="revenue" fill="#1976d2" name="Revenue" />
-            <Bar dataKey="profit" fill="#bfa46f" name="Profit" />
-          </BarChart>
-        </ResponsiveContainer>
-      </Paper>
-      <Button sx={{ mt: 3 }} variant="outlined" onClick={() => window.history.back()}>Back</Button>
-    </Container>
+    <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+      <Container maxWidth="sm" sx={{ py: 4, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+        <Card sx={{ p: 3, mb: 3, width: '100%', maxWidth: 500, mx: 'auto', boxShadow: 3, borderRadius: 4 }}>
+          <CardContent>
+            <Stack direction="row" alignItems="center" spacing={2} justifyContent="center">
+              <Typography variant="h5" fontWeight={700}>{stock.name} ({stock.symbol})</Typography>
+              <Chip label={recommendation.label}
+                icon={<span>{recommendation.icon}</span>}
+                color={recommendation.color === 'success' ? 'success' : 'default'}
+                sx={
+                  recommendation.color !== 'success' ? {
+                    bgcolor: recommendation.color,
+                    color: '#fff',
+                    fontWeight: 600
+                  } : {}
+                }
+              />
+            </Stack>
+            <Typography variant="subtitle1" color="text.secondary">{stock.industry}</Typography>
+            <Box mt={2}>
+              <Typography>PE: {stock.pe}</Typography>
+              <Typography>EPS: {stock.eps}</Typography>
+              <Typography>Price: {stock.price}</Typography>
+              <Typography>Median 10yr PE: {stock.pe10}</Typography>
+              <Typography>Median 5yr PE: {stock.pe5}</Typography>
+              <Typography sx={{ fontWeight: 600, color: 'primary.main' }}>Fair Value (10yr): {fairValue10}</Typography>
+              <Typography sx={{ fontWeight: 600, color: 'secondary.main' }}>Fair Value (5yr): {fairValue5}</Typography>
+            </Box>
+          </CardContent>
+        </Card>
+        <Paper sx={{ p: 3, width: '100%', maxWidth: 500, mx: 'auto' }}>
+          <Stack direction="row" spacing={2} mb={2} justifyContent="center">
+            <FormControl size="small">
+              <InputLabel>Year</InputLabel>
+              <Select value={year} label="Year" onChange={e => setYear(e.target.value)}>
+                {[...new Set((stock.quarters||[]).map(q => q.year))].map(y => <MenuItem key={y} value={y}>{y}</MenuItem>)}
+              </Select>
+            </FormControl>
+            <FormControl size="small">
+              <InputLabel>Quarter</InputLabel>
+              <Select value={quarter} label="Quarter" onChange={e => setQuarter(e.target.value)}>
+                <MenuItem value="">All</MenuItem>
+                {[...new Set((stock.quarters||[]).map(q => q.quarter))].map(q => <MenuItem key={q} value={q}>{q}</MenuItem>)}
+              </Select>
+            </FormControl>
+          </Stack>
+          <ResponsiveContainer width="100%" height={250}>
+            <BarChart data={chartData} margin={{ top: 10, right: 10, left: 0, bottom: 10 }}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="quarter" />
+              <YAxis />
+              <Tooltip />
+              <Bar dataKey="revenue" fill="#1976d2" name="Revenue" />
+              <Bar dataKey="profit" fill="#bfa46f" name="Profit" />
+            </BarChart>
+          </ResponsiveContainer>
+        </Paper>
+        <Button sx={{ mt: 3 }} variant="outlined" onClick={() => window.history.back()}>Back</Button>
+      </Container>
+    </Box>
   );
 };
 
