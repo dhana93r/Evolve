@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Container, Typography, Box, Stack, Button, MenuItem, Select, FormControl, InputLabel, Paper, Chip, Card, CardContent } from '@mui/material';
+import { Container, Typography, Box, Stack, MenuItem, Select, FormControl, InputLabel, Paper, Chip, Card, CardContent } from '@mui/material';
+import EvolveButton from './EvolveButton';
 import { calculateFairValue, getRecommendation } from './calc';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
 
@@ -39,9 +40,40 @@ const StockDetails = () => {
   const recommendation = getRecommendation(stock);
 
   return (
-    <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-      <Container maxWidth="sm" sx={{ py: 4, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-        <Card sx={{ p: 3, mb: 3, width: '100%', maxWidth: 500, mx: 'auto', boxShadow: 3, borderRadius: 4 }}>
+    <Box
+      sx={{
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        px: { xs: 1, sm: 2 },
+        width: '100vw',
+        boxSizing: 'border-box',
+      }}
+    >
+      <Container
+        maxWidth="sm"
+        sx={{
+          py: 4,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          textAlign: 'center',
+          px: { xs: 0.5, sm: 2 },
+        }}
+      >
+        <Card
+          sx={{
+            p: { xs: 2, sm: 3 },
+            mb: 3,
+            width: '100%',
+            maxWidth: 500,
+            mx: 'auto',
+            boxShadow: 3,
+            borderRadius: { xs: 3, sm: 4 },
+          }}
+        >
           <CardContent>
             <Stack direction="row" alignItems="center" spacing={2} justifyContent="center">
               <Typography variant="h5" fontWeight={700}>{stock.name} ({stock.symbol})</Typography>
@@ -69,8 +101,17 @@ const StockDetails = () => {
             </Box>
           </CardContent>
         </Card>
-        <Paper sx={{ p: 3, width: '100%', maxWidth: 500, mx: 'auto' }}>
-          <Stack direction="row" spacing={2} mb={2} justifyContent="center">
+        <Paper
+          sx={{
+            p: { xs: 2, sm: 3 },
+            width: '100%',
+            maxWidth: 500,
+            mx: 'auto',
+            borderRadius: { xs: 2, sm: 3 },
+            overflowX: 'auto',
+          }}
+        >
+          <Stack direction="row" spacing={2} mb={2} justifyContent="center" sx={{ flexWrap: 'wrap', gap: { xs: 1, sm: 2 } }}>
             <FormControl size="small">
               <InputLabel>Year</InputLabel>
               <Select value={year} label="Year" onChange={e => setYear(e.target.value)}>
@@ -96,7 +137,9 @@ const StockDetails = () => {
             </BarChart>
           </ResponsiveContainer>
         </Paper>
-        <Button sx={{ mt: 3 }} variant="outlined" onClick={() => window.history.back()}>Back</Button>
+        <EvolveButton sx={{ mt: 3, width: { xs: '100%', sm: 'auto' } }} variant="outlined" onClick={() => window.history.back()}>
+          Back
+        </EvolveButton>
       </Container>
     </Box>
   );

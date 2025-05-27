@@ -1,28 +1,49 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { AppBar, Toolbar, Typography, Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import * as anime from 'animejs';
 
-const AnimatedLogo = () => (
-  <Typography
-    variant="h5"
-    fontWeight={900}
-    sx={{
-      letterSpacing: 2,
-      color: 'primary.main',
-      fontFamily: 'Inter, Roboto, Arial, sans-serif',
-      userSelect: 'none',
-      animation: 'evolveLogoPulse 2s infinite',
-      cursor: 'pointer',
-      '@keyframes evolveLogoPulse': {
-        '0%': { textShadow: '0 0 0 #1976d2' },
-        '50%': { textShadow: '0 0 16px #1976d2' },
-        '100%': { textShadow: '0 0 0 #1976d2' },
-      },
-    }}
-  >
-    Evolve
-  </Typography>
-);
+const AnimatedLogo = () => {
+  const logoRef = useRef(null);
+  useEffect(() => {
+    if (logoRef.current && anime && typeof anime === 'object' && typeof anime.anime === 'function') {
+      anime.anime({
+        targets: logoRef.current,
+        scale: [1, 1.15, 1],
+        color: [
+          '#1976d2',
+          '#64b5f6',
+          '#1976d2',
+        ],
+        textShadow: [
+          '0 0 0 #1976d2',
+          '0 0 24px #64b5f6',
+          '0 0 0 #1976d2',
+        ],
+        duration: 2000,
+        easing: 'easeInOutSine',
+        loop: true,
+      });
+    }
+  }, []);
+  return (
+    <Typography
+      ref={logoRef}
+      variant="h5"
+      fontWeight={900}
+      sx={{
+        letterSpacing: 2,
+        color: 'primary.main',
+        fontFamily: 'Inter, Roboto, Arial, sans-serif',
+        userSelect: 'none',
+        cursor: 'pointer',
+        transition: 'color 0.3s',
+      }}
+    >
+      Evolve
+    </Typography>
+  );
+};
 
 const Header = () => {
   const navigate = useNavigate();
