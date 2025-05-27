@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Box as MuiBox, Typography as MuiTypography } from '@mui/material';
+import { Container, Typography, Box as MuiBox, Typography as MuiTypography } from '@mui/material';
+import EvolveTable from './EvolveTable';
 import EvolveButton from './EvolveButton';
 import { useNavigate } from 'react-router-dom';
 import Skeleton from '@mui/material/Skeleton';
@@ -17,6 +18,12 @@ const Stocks = () => {
       .then(setStocks)
       .finally(() => setLoading(false));
   }, []);
+
+  const columns = [
+    { id: 'name', label: 'Name', align: 'center', sx: { fontSize: { xs: '0.95rem', sm: '1rem' }, px: { xs: 0.5, sm: 2 } } },
+    { id: 'industry', label: 'Industry', align: 'center', sx: { fontSize: { xs: '0.95rem', sm: '1rem' }, px: { xs: 0.5, sm: 2 } } },
+    { id: 'price', label: 'Current Price', align: 'center', sx: { fontSize: { xs: '0.95rem', sm: '1rem' }, px: { xs: 0.5, sm: 2 } } },
+  ];
 
   return (
     <Box
@@ -54,42 +61,20 @@ const Stocks = () => {
             <Typography variant="h4" fontWeight={700} gutterBottom align="center" sx={{ fontSize: { xs: '1.5rem', sm: '2.1rem' } }}>
               All NSE India Stocks
             </Typography>
-            <TableContainer
-              component={Paper}
-              sx={{
-                width: '100%',
-                maxWidth: 600,
-                mx: 'auto',
-                boxShadow: 2,
-                overflowX: 'auto',
-                borderRadius: { xs: 2, sm: 3 },
-              }}
-            >
-              <Table size="small" sx={{ minWidth: 350 }}>
-                <TableHead>
-                  <TableRow>
-                    <TableCell align="center">Name</TableCell>
-                    <TableCell align="center">Industry</TableCell>
-                    <TableCell align="center">Current Price</TableCell>
-                    <TableCell align="center">Action</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {stocks.map((stock) => (
-                    <TableRow key={stock.symbol}>
-                      <TableCell align="center" sx={{ fontSize: { xs: '0.95rem', sm: '1rem' }, px: { xs: 0.5, sm: 2 } }}>{stock.name}</TableCell>
-                      <TableCell align="center" sx={{ fontSize: { xs: '0.95rem', sm: '1rem' }, px: { xs: 0.5, sm: 2 } }}>{stock.industry}</TableCell>
-                      <TableCell align="center" sx={{ fontSize: { xs: '0.95rem', sm: '1rem' }, px: { xs: 0.5, sm: 2 } }}>{stock.price}</TableCell>
-                      <TableCell align="center" sx={{ px: { xs: 0.5, sm: 2 } }}>
-                        <EvolveButton sx={{ mt: 1 }} onClick={() => navigate(`/stocks/${stock.symbol}`)}>
-  View Details
-</EvolveButton>
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
+            <EvolveTable
+              columns={columns}
+              rows={stocks}
+              getRowKey={(row) => row.symbol}
+              renderActions={(row) => (
+                <EvolveButton sx={{ mt: 1 }} onClick={() => navigate(`/stocks/${row.symbol}`)}>
+                  View Details
+                </EvolveButton>
+              )}
+              loading={loading}
+              emptyMessage="No stocks found."
+              enableStriped={true}
+              enableHover={true}
+            />
           </>
         )}
       </Container>

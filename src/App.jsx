@@ -5,7 +5,9 @@ import Stocks from './Stocks';
 import StockDetails from './StockDetails';
 import Header from './Header';
 import Footer from './Footer';
-import { CssBaseline, ThemeProvider, createTheme, Box } from '@mui/material';
+import DashboardLayout from './DashboardLayout';
+import { CssBaseline, ThemeProvider, createTheme, Box, Typography } from '@mui/material';
+import CompanyDetails from './CompanyDetails';
 
 const theme = createTheme({
   palette: {
@@ -27,17 +29,22 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <BrowserRouter>
-        <Box sx={{ minHeight: '100vh', width: '100vw', display: 'flex', flexDirection: 'column' }}>
-          <Header />
-          <Box sx={{ flex: 1, width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <Routes>
-              <Route path="/" element={<Welcome />} />
-              <Route path="/stocks" element={<Stocks />} />
-              <Route path="/stocks/:symbol" element={<StockDetails />} />
-            </Routes>
-          </Box>
-          <Footer />
-        </Box>
+        <Routes>
+          <Route path="/" element={<Welcome />} />
+          <Route
+            path="/*"
+            element={
+              <DashboardLayout>
+                <Routes>
+                  <Route path="stocks" element={<Stocks />} />
+                  <Route path="stocks/:symbol" element={<StockDetails />} />
+                  <Route path="learn" element={<Box sx={{ p: 2 }}><Typography variant="h4">Learn Area (Coming Soon)</Typography></Box>} />
+                  <Route path="company-details" element={<CompanyDetails />} />
+                </Routes>
+              </DashboardLayout>
+            }
+          />
+        </Routes>
       </BrowserRouter>
     </ThemeProvider>
   );
