@@ -8,6 +8,8 @@ import Footer from './Footer';
 import DashboardLayout from './DashboardLayout';
 import { CssBaseline, ThemeProvider, createTheme, Box, Typography } from '@mui/material';
 import CompanyDetails from './CompanyDetails';
+import Learn from './Learn';
+import CompanyGroupProfile from './CompanyGroupProfile';
 
 const theme = createTheme({
   palette: {
@@ -36,10 +38,12 @@ function App() {
             element={
               <DashboardLayout>
                 <Routes>
+                  <Route path="/" element={<Welcome />} />
                   <Route path="stocks" element={<Stocks />} />
                   <Route path="stocks/:symbol" element={<StockDetails />} />
-                  <Route path="learn" element={<Box sx={{ p: 2 }}><Typography variant="h4">Learn Area (Coming Soon)</Typography></Box>} />
                   <Route path="company-details" element={<CompanyDetails />} />
+                  <Route path="learn" element={<Learn />} />
+                  <Route path="company-group-profile" element={<CompanyGroupProfile />} />
                 </Routes>
               </DashboardLayout>
             }

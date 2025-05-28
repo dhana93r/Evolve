@@ -15,14 +15,17 @@ import HomeIcon from '@mui/icons-material/Home';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import SchoolIcon from '@mui/icons-material/School';
 import InfoIcon from '@mui/icons-material/Info';
+import GroupIcon from '@mui/icons-material/Group';
 import Divider from '@mui/material/Divider';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const drawerWidth = 220;
 
 const navItems = [
+  { label: 'Home', icon: <HomeIcon />, path: '/' },
   { label: 'Stocks', icon: <ListAltIcon />, path: '/stocks' },
   { label: 'Company Details', icon: <InfoIcon />, path: '/company-details' },
+  { label: 'Company Group Profile', icon: <GroupIcon />, path: '/company-group-profile' },
   { label: 'Learn', icon: <SchoolIcon />, path: '/learn' },
 ];
 
@@ -40,6 +43,13 @@ export default function DashboardLayout({ children }) {
     setMobileOpen(false);
   };
 
+  const isSelected = (itemPath) => {
+    if (itemPath === '/') {
+      return location.pathname === '/';
+    }
+    return location.pathname.startsWith(itemPath);
+  };
+
   const drawer = (
     <div>
       <Toolbar>
@@ -51,7 +61,7 @@ export default function DashboardLayout({ children }) {
       <List>
         {navItems.map((item) => (
           <ListItem key={item.label} disablePadding>
-            <ListItemButton selected={location.pathname.startsWith(item.path)} onClick={() => handleNavClick(item.path)}>
+            <ListItemButton selected={isSelected(item.path)} onClick={() => handleNavClick(item.path)}>
               <ListItemIcon>{item.icon}</ListItemIcon>
               <ListItemText primary={item.label} />
             </ListItemButton>
