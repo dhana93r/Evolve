@@ -1,0 +1,34 @@
+[
+  {
+    "symbol": "RELIANCE",
+    "name": "Reliance Industries",
+    "industry": "Conglomerate",
+    "price": 2500,
+    "pe": 25,
+    "pe5": 22,
+    "pe10": 20,
+    "eps": 100,
+    "recommendation": "consider",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 180000, "profit": 15000 },
+      { "year": 2024, "quarter": "Q3", "revenue": 170000, "profit": 14000 },
+      { "year": 2023, "quarter": "Q4", "revenue": 160000, "profit": 13000 }
+    ]
+  },
+  {
+    "symbol": "TCS",
+    "name": "Tata Consultancy Services",
+    "industry": "IT",
+    "price": 3500,
+    "pe": 30,
+    "pe5": 28,
+    "pe10": 26,
+    "eps": 90,
+    "recommendation": "not_consider",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 60000, "profit": 12000 },
+      { "year": 2024, "quarter": "Q3", "revenue": 59000, "profit": 11000 },
+      { "year": 2023, "quarter": "Q4", "revenue": 58000, "profit": 10000 }
+    ]
+  }
+]
