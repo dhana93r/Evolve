@@ -1,15 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Welcome from './Welcome';
-import Stocks from './Stocks';
-import StockDetails from './StockDetails';
-import Header from './Header';
-import Footer from './Footer';
-import DashboardLayout from './DashboardLayout';
-import { CssBaseline, ThemeProvider, createTheme, Box, Typography } from '@mui/material';
-import CompanyDetails from './CompanyDetails';
-import Learn from './Learn';
-import CompanyGroupProfile from './CompanyGroupProfile';
+import { Welcome, Stocks, StockDetails, CompanyDetails, Learn, CompanyGroupProfile } from './pages';
+import { DashboardLayout } from './layout';
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 
 const theme = createTheme({
   palette: {

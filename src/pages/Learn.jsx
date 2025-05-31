@@ -1,5 +1,5 @@
 import React from 'react';
-import { Accordion, AccordionSummary, AccordionDetails, Typography, Box, useMediaQuery, useTheme, Paper } from '@mui/material';
+import { Accordion, AccordionSummary, AccordionDetails, Typography, Box, useMediaQuery, useTheme } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const peContent = (
@@ -63,52 +63,37 @@ export default function Learn() {
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
         justifyContent: 'center',
-        px: 0,
-        py: { xs: 2, md: 6 },
+        alignItems: 'center',
+        px: { xs: 1, sm: 2 },
         width: '100vw',
         boxSizing: 'border-box',
-        background: theme.palette.background.default,
         overflowX: 'hidden',
       }}
     >
-      <Paper
-        elevation={isDesktop ? 3 : 0}
-        sx={{
-          width: '100vw',
-          maxWidth: '100vw',
-          mx: 0,
-          p: { xs: 0, sm: 4, md: 6 },
-          borderRadius: 0,
-          background: isDesktop ? theme.palette.background.paper : 'transparent',
-          boxShadow: isDesktop ? undefined : 'none',
-        }}
-      >
-        <Box sx={{ maxWidth: 900, mx: 'auto', p: { xs: 2, sm: 4, md: 6 } }}>
-          <Typography variant="h4" align="center" fontWeight={700} mb={4}>
-            Learn: Key Stock Market Terms
-          </Typography>
-          <Accordion sx={{ mb: 2 }}>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6"><b>What is PE?</b></Typography>
-            </AccordionSummary>
-            <AccordionDetails>{peContent}</AccordionDetails>
-          </Accordion>
-          <Accordion sx={{ mb: 2 }}>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6"><b>What is EPS?</b></Typography>
-            </AccordionSummary>
-            <AccordionDetails>{epsContent}</AccordionDetails>
-          </Accordion>
-          <Accordion>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6"><b>What is Debt to Equity?</b></Typography>
-            </AccordionSummary>
-            <AccordionDetails>{debtEquityContent}</AccordionDetails>
-          </Accordion>
-        </Box>
-      </Paper>
+      <Box sx={{ maxWidth: 900, mx: 'auto', p: { xs: 2, sm: 4, md: 6 }, width: '100%', boxSizing: 'border-box', overflowX: 'hidden' }}>
+        <Typography variant="h4" align="center" fontWeight={700} mb={4}>
+          Learn: Key Stock Market Terms
+        </Typography>
+        <Accordion sx={{ mb: 2 }}>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <Typography variant="h6"><b>What is PE?</b></Typography>
+          </AccordionSummary>
+          <AccordionDetails>{peContent}</AccordionDetails>
+        </Accordion>
+        <Accordion sx={{ mb: 2 }}>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <Typography variant="h6"><b>What is EPS?</b></Typography>
+          </AccordionSummary>
+          <AccordionDetails>{epsContent}</AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <Typography variant="h6"><b>What is Debt to Equity?</b></Typography>
+          </AccordionSummary>
+          <AccordionDetails>{debtEquityContent}</AccordionDetails>
+        </Accordion>
+      </Box>
     </Box>
   );
 }

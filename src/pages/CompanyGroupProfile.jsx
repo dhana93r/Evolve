@@ -196,7 +196,7 @@ export default function CompanyGroupProfile() {
 				display: 'flex',
 				flexDirection: 'column',
 				alignItems: 'center',
-				width: '100%', // Use 100% instead of 100vw
+				width: '100vw',
 				boxSizing: 'border-box',
 				overflowX: 'hidden',
 			}}

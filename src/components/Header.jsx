@@ -1,31 +1,31 @@
 import React, { useEffect, useRef } from 'react';
 import { AppBar, Toolbar, Typography, Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import * as anime from 'animejs';
+// import * as anime from 'animejs';
 
 const AnimatedLogo = () => {
   const logoRef = useRef(null);
-  useEffect(() => {
-    if (logoRef.current && anime && typeof anime === 'object' && typeof anime.anime === 'function') {
-      anime.anime({
-        targets: logoRef.current,
-        scale: [1, 1.15, 1],
-        color: [
-          '#1976d2',
-          '#64b5f6',
-          '#1976d2',
-        ],
-        textShadow: [
-          '0 0 0 #1976d2',
-          '0 0 24px #64b5f6',
-          '0 0 0 #1976d2',
-        ],
-        duration: 2000,
-        easing: 'easeInOutSine',
-        loop: true,
-      });
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (logoRef.current && anime && typeof anime === 'object' && typeof anime.anime === 'function') {
+  //     anime.anime({
+  //       targets: logoRef.current,
+  //       scale: [1, 1.15, 1],
+  //       color: [
+  //         '#1976d2',
+  //         '#64b5f6',
+  //         '#1976d2',
+  //       ],
+  //       textShadow: [
+  //         '0 0 0 #1976d2',
+  //         '0 0 24px #64b5f6',
+  //         '0 0 0 #1976d2',
+  //       ],
+  //       duration: 2000,
+  //       easing: 'easeInOutSine',
+  //       loop: true,
+  //     });
+  //   }
+  // }, []);
   return (
     <Typography
       ref={logoRef}

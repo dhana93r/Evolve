@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Container, Typography, Box } from '@mui/material';
 import Skeleton from '@mui/material/Skeleton';
 import { useNavigate } from 'react-router-dom';
-import EvolveAlert from './EvolveAlert';
+import { EvolveAlert } from '../components';
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 
@@ -38,9 +38,10 @@ const Welcome = () => {
         px: { xs: 1, sm: 2 },
         width: '100vw',
         boxSizing: 'border-box',
+        overflowX: 'hidden',
       }}
     >
-      <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+      <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100%', maxWidth: 480, mx: 'auto', boxSizing: 'border-box', overflowX: 'hidden' }}>
         <Dialog
           open={alertOpen}
           onClose={() => setAlertOpen(false)}

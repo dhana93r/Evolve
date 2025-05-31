@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, Typography, Box, Stack, MenuItem, Select, FormControl, InputLabel, Paper, Chip, Card, CardContent } from '@mui/material';
-import EvolveButton from './EvolveButton';
-import { calculateFairValue, getRecommendation } from './calc';
+import { EvolveButton } from '../components';
+import { calculateFairValue, getRecommendation } from '../utils';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
 
 const StockDetails = () => {
@@ -50,6 +50,7 @@ const StockDetails = () => {
         px: { xs: 1, sm: 2 },
         width: '100vw',
         boxSizing: 'border-box',
+        overflowX: 'hidden',
       }}
     >
       <Container
@@ -61,6 +62,11 @@ const StockDetails = () => {
           alignItems: 'center',
           textAlign: 'center',
           px: { xs: 0.5, sm: 2 },
+          width: '100%',
+          maxWidth: 500,
+          mx: 'auto',
+          boxSizing: 'border-box',
+          overflowX: 'hidden',
         }}
       >
         <Card

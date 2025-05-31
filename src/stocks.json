@@ -2,33 +2,1965 @@
   {
     "symbol": "RELIANCE",
     "name": "Reliance Industries",
-    "industry": "Conglomerate",
-    "price": 2500,
-    "pe": 25,
-    "pe5": 22,
-    "pe10": 20,
-    "eps": 100,
+    "industry": "Refineries",
+    "price": 1418,
+    "pe": 27.6,
+    "pe5": 25,
+    "pe10": 22,
+    "eps": 51.47,
     "recommendation": "consider",
     "quarters": [
-      { "year": 2024, "quarter": "Q4", "revenue": 180000, "profit": 15000 },
-      { "year": 2024, "quarter": "Q3", "revenue": 170000, "profit": 14000 },
-      { "year": 2023, "quarter": "Q4", "revenue": 160000, "profit": 13000 }
+      { "year": 2024, "quarter": "Q4", "revenue": 261388, "profit": 22611 },
+      { "year": 2024, "quarter": "Q3", "revenue": 239986, "profit": 21930 },
+      { "year": 2024, "quarter": "Q2", "revenue": 231535, "profit": 19323 },
+      { "year": 2024, "quarter": "Q1", "revenue": 231784, "profit": 17445 }
     ]
   },
   {
     "symbol": "TCS",
     "name": "Tata Consultancy Services",
-    "industry": "IT",
-    "price": 3500,
-    "pe": 30,
+    "industry": "IT - Software",
+    "price": 3498,
+    "pe": 26.1,
     "pe5": 28,
     "pe10": 26,
-    "eps": 90,
+    "eps": 134.20,
     "recommendation": "not_consider",
     "quarters": [
-      { "year": 2024, "quarter": "Q4", "revenue": 60000, "profit": 12000 },
-      { "year": 2024, "quarter": "Q3", "revenue": 59000, "profit": 11000 },
-      { "year": 2023, "quarter": "Q4", "revenue": 58000, "profit": 10000 }
+      { "year": 2024, "quarter": "Q4", "revenue": 64479, "profit": 12293 },
+      { "year": 2024, "quarter": "Q3", "revenue": 63973, "profit": 12444 },
+      { "year": 2024, "quarter": "Q2", "revenue": 64259, "profit": 11955 },
+      { "year": 2024, "quarter": "Q1", "revenue": 62613, "profit": 12105 }
     ]
+  },
+  {
+    "symbol": "AMARAJA_BATTERIES",
+    "name": "Amaraja Batteries",
+    "industry": "Auto Ancillaries",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "unavailable",
+    "quarters": []
+  },
+  {
+    "symbol": "ASTHER_DM_HEALTH_CARE",
+    "name": "Asther DM Health Care",
+    "industry": "Healthcare",
+    "price": 574.7,
+    "pe": 44.7,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 12.86,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 3631, "profit": 181 },
+      { "year": 2024, "quarter": "Q3", "revenue": 3542, "profit": 169 },
+      { "year": 2024, "quarter": "Q2", "revenue": 3492, "profit": 160 },
+      { "year": 2024, "quarter": "Q1", "revenue": 3401, "profit": 159 }
+    ]
+  },
+  {
+    "symbol": "BAJAJ_AUTO",
+    "name": "Bajaj Auto",
+    "industry": "Automobile",
+    "price": 9002.7,
+    "pe": 32.1,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 280.36,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 11581, "profit": 2030 },
+      { "year": 2024, "quarter": "Q3", "revenue": 11267, "profit": 1910 },
+      { "year": 2024, "quarter": "Q2", "revenue": 10827, "profit": 1850 },
+      { "year": 2024, "quarter": "Q1", "revenue": 10500, "profit": 1700 }
+    ]
+  },
+  {
+    "symbol": "BAJAJ_HOLDING_AND_INVESTMENT",
+    "name": "Bajaj Holding and Investment",
+    "industry": "Finance",
+    "price": 7920.0,
+    "pe": 15.2,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 520.6,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 184, "profit": 142 },
+      { "year": 2024, "quarter": "Q3", "revenue": 180, "profit": 140 },
+      { "year": 2024, "quarter": "Q2", "revenue": 175, "profit": 135 },
+      { "year": 2024, "quarter": "Q1", "revenue": 170, "profit": 130 }
+    ]
+  },
+  {
+    "symbol": "BAJAJ_HOUSING_FINANCE",
+    "name": "Bajaj Housing Finance",
+    "industry": "Finance",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "unavailable",
+    "quarters": []
+  },
+  {
+    "symbol": "BHARAT_HEAVY_ELECTRONICS_LIMITED",
+    "name": "Bharat Heavy Electronics Limited",
+    "industry": "Engineering",
+    "price": 319.2,
+    "pe": 61.2,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 5.22,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 8250, "profit": 680 },
+      { "year": 2024, "quarter": "Q3", "revenue": 8000, "profit": 650 },
+      { "year": 2024, "quarter": "Q2", "revenue": 7800, "profit": 600 },
+      { "year": 2024, "quarter": "Q1", "revenue": 7600, "profit": 550 }
+    ]
+  },
+  {
+    "symbol": "BIRLA_SOFT",
+    "name": "Birla soft",
+    "industry": "IT - Software",
+    "price": 690.5,
+    "pe": 38.7,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 17.84,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 1160, "profit": 140 },
+      { "year": 2024, "quarter": "Q3", "revenue": 1140, "profit": 135 },
+      { "year": 2024, "quarter": "Q2", "revenue": 1120, "profit": 130 },
+      { "year": 2024, "quarter": "Q1", "revenue": 1100, "profit": 125 }
+    ]
+  },
+  {
+    "symbol": "CIPLA",
+    "name": "Cipla",
+    "industry": "Pharmaceuticals",
+    "price": 1420.1,
+    "pe": 32.5,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 43.7,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 6270, "profit": 900 },
+      { "year": 2024, "quarter": "Q3", "revenue": 6100, "profit": 870 },
+      { "year": 2024, "quarter": "Q2", "revenue": 6000, "profit": 850 },
+      { "year": 2024, "quarter": "Q1", "revenue": 5900, "profit": 820 }
+    ]
+  },
+  {
+    "symbol": "COFORGE_TECH",
+    "name": "Coforge Tech",
+    "industry": "IT - Software",
+    "price": 5220.0,
+    "pe": 44.2,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 118.1,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 2200, "profit": 250 },
+      { "year": 2024, "quarter": "Q3", "revenue": 2150, "profit": 240 },
+      { "year": 2024, "quarter": "Q2", "revenue": 2100, "profit": 230 },
+      { "year": 2024, "quarter": "Q1", "revenue": 2050, "profit": 220 }
+    ]
+  },
+  {
+    "symbol": "CROMPTON",
+    "name": "Crompton",
+    "industry": "Consumer Durables",
+    "price": 347.6,
+    "pe": 36.8,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 9.45,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 1800, "profit": 120 },
+      { "year": 2024, "quarter": "Q3", "revenue": 1750, "profit": 115 },
+      { "year": 2024, "quarter": "Q2", "revenue": 1700, "profit": 110 },
+      { "year": 2024, "quarter": "Q1", "revenue": 1650, "profit": 105 }
+    ]
+  },
+  {
+    "symbol": "DLF",
+    "name": "DLF",
+    "industry": "Real Estate",
+    "price": 885.2,
+    "pe": 74.5,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 11.89,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 2065, "profit": 920 },
+      { "year": 2024, "quarter": "Q3", "revenue": 1927, "profit": 655 },
+      { "year": 2024, "quarter": "Q2", "revenue": 1837, "profit": 620 },
+      { "year": 2024, "quarter": "Q1", "revenue": 1555, "profit": 527 }
+    ]
+  },
+  {
+    "symbol": "GAIL",
+    "name": "GAIL (India) Limited",
+    "industry": "Gas Transmission",
+    "price": 197.6,
+    "pe": 15.2,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 12.98,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 33785, "profit": 2710 },
+      { "year": 2024, "quarter": "Q3", "revenue": 35400, "profit": 3210 },
+      { "year": 2024, "quarter": "Q2", "revenue": 34700, "profit": 2600 },
+      { "year": 2024, "quarter": "Q1", "revenue": 32500, "profit": 2100 }
+    ]
+  },
+  {
+    "symbol": "HCL_TECH",
+    "name": "HCL Technologies",
+    "industry": "IT - Software",
+    "price": 1442.1,
+    "pe": 26.7,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 54.01,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 28399, "profit": 3983 },
+      { "year": 2024, "quarter": "Q3", "revenue": 26700, "profit": 4310 },
+      { "year": 2024, "quarter": "Q2", "revenue": 26672, "profit": 3845 },
+      { "year": 2024, "quarter": "Q1", "revenue": 26400, "profit": 3760 }
+    ]
+  },
+  {
+    "symbol": "HDFC",
+    "name": "HDFC Bank",
+    "industry": "Finance",
+    "price": 1532.5,
+    "pe": 18.7,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 81.97,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 61200, "profit": 17060 },
+      { "year": 2024, "quarter": "Q3", "revenue": 58300, "profit": 16400 },
+      { "year": 2024, "quarter": "Q2", "revenue": 57000, "profit": 15800 },
+      { "year": 2024, "quarter": "Q1", "revenue": 55500, "profit": 15500 }
+    ]
+  },
+  {
+    "symbol": "HINDALCO",
+    "name": "Hindalco Industries",
+    "industry": "Metals - Non Ferrous",
+    "price": 671.3,
+    "pe": 16.1,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 41.67,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 55300, "profit": 2600 },
+      { "year": 2024, "quarter": "Q3", "revenue": 54000, "profit": 2200 },
+      { "year": 2024, "quarter": "Q2", "revenue": 53000, "profit": 2100 },
+      { "year": 2024, "quarter": "Q1", "revenue": 52000, "profit": 2000 }
+    ]
+  },
+  {
+    "symbol": "HINDUSTAN_UNILEVER",
+    "name": "Hindustan Unilever",
+    "industry": "FMCG",
+    "price": 2421.7,
+    "pe": 54.2,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 44.69,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 15190, "profit": 2550 },
+      { "year": 2024, "quarter": "Q3", "revenue": 15000, "profit": 2400 },
+      { "year": 2024, "quarter": "Q2", "revenue": 14800, "profit": 2300 },
+      { "year": 2024, "quarter": "Q1", "revenue": 14600, "profit": 2200 }
+    ]
+  },
+  {
+    "symbol": "ICICI_BANK",
+    "name": "Icici Bank",
+    "industry": "Banking",
+    "price": 1112.8,
+    "pe": 19.5,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 57.13,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 37700, "profit": 10800 },
+      { "year": 2024, "quarter": "Q3", "revenue": 36500, "profit": 10500 },
+      { "year": 2024, "quarter": "Q2", "revenue": 35500, "profit": 10200 },
+      { "year": 2024, "quarter": "Q1", "revenue": 34500, "profit": 9900 }
+    ]
+  },
+  {
+    "symbol": "ICICI_LOMBARD_INSURANCE",
+    "name": "ICICI Lombard Insurance",
+    "industry": "Insurance",
+    "price": 1672.3,
+    "pe": 44.8,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 37.32,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 5630, "profit": 520 },
+      { "year": 2024, "quarter": "Q3", "revenue": 5500, "profit": 500 },
+      { "year": 2024, "quarter": "Q2", "revenue": 5400, "profit": 480 },
+      { "year": 2024, "quarter": "Q1", "revenue": 5300, "profit": 460 }
+    ]
+  },
+  {
+    "symbol": "IDFC_FIRST_BANK",
+    "name": "IDFC first bank",
+    "industry": "Banking",
+    "price": 80.6,
+    "pe": 18.9,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 4.27,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 8500, "profit": 720 },
+      { "year": 2024, "quarter": "Q3", "revenue": 8300, "profit": 700 },
+      { "year": 2024, "quarter": "Q2", "revenue": 8100, "profit": 680 },
+      { "year": 2024, "quarter": "Q1", "revenue": 7900, "profit": 650 }
+    ]
+  },
+  {
+    "symbol": "ITC",
+    "name": "Indian Tobacco Company",
+    "industry": "FMCG",
+    "price": 441.2,
+    "pe": 26.3,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 16.78,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 17000, "profit": 5400 },
+      { "year": 2024, "quarter": "Q3", "revenue": 16800, "profit": 5300 },
+      { "year": 2024, "quarter": "Q2", "revenue": 16500, "profit": 5200 },
+      { "year": 2024, "quarter": "Q1", "revenue": 16200, "profit": 5100 }
+    ]
+  },
+  {
+    "symbol": "SUN_PHARMA",
+    "name": "Sun Pharmaceutical Industries",
+    "industry": "Pharmaceuticals",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "SUPREME_INDUSTRIES",
+    "name": "Supreme Industries",
+    "industry": "Industrials",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "SURYODHAYA_BANK",
+    "name": "Suryodhaya bank",
+    "industry": "Banking",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TAMILNADU_MERCHANDILE_BANK",
+    "name": "Taminadu Merchandile Bank",
+    "industry": "Banking",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_CHEMICALS",
+    "name": "Tata Chemicals",
+    "industry": "Chemicals",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_CONSUMER_PRODUCTS",
+    "name": "Tata Consumer Products",
+    "industry": "FMCG",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_ELXSI",
+    "name": "Tata Elxsi",
+    "industry": "IT - Software",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_INVESTMENT_CORP",
+    "name": "Tata Investment Corp",
+    "industry": "Finance",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_MOTORS",
+    "name": "Tata Motors",
+    "industry": "Automobile",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_TECHNOLOGIES",
+    "name": "Tata technologies",
+    "industry": "IT - Software",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "ULTRATECH_CEMENT",
+    "name": "UltraTech Cement",
+    "industry": "Cement",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "DABUR_INDIA",
+    "name": "Dabur India",
+    "industry": "FMCG",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "DIVIS_LAB",
+    "name": "Divi's Lab",
+    "industry": "Pharmaceuticals",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "DR_REDDY_LABS",
+    "name": "Dr Reddy Labs",
+    "industry": "Pharmaceuticals",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "EICHER_MOTORS",
+    "name": "Eicher Motors",
+    "industry": "Automobile",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "EXIDE_INDUSTRIES",
+    "name": "Exide Industries",
+    "industry": "Auto Ancillaries",
+    "price": 389,
+    "pe": 30.7,
+    "pe5": 11,
+    "pe10": 9,
+    "eps": 12.67,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2025, "quarter": "Q4", "revenue": 4159, "profit": 255 },
+      { "year": 2025, "quarter": "Q3", "revenue": 3849, "profit": 245 },
+      { "year": 2025, "quarter": "Q2", "revenue": 4267, "profit": 298 },
+      { "year": 2025, "quarter": "Q1", "revenue": 4313, "profit": 280 }
+    ]
+  },
+  {
+    "symbol": "FEDERAL_BANK",
+    "name": "Federal Bank",
+    "industry": "Banking",
+    "price": 201,
+    "pe": 12.2,
+    "pe5": 15,
+    "pe10": 14,
+    "eps": 16.5,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2025, "quarter": "Q4", "revenue": 6648, "profit": 1030 },
+      { "year": 2025, "quarter": "Q3", "revenue": 6809, "profit": 955 },
+      { "year": 2025, "quarter": "Q2", "revenue": 6577, "profit": 1057 },
+      { "year": 2025, "quarter": "Q1", "revenue": 6331, "profit": 1010 }
+    ]
+  },
+  {
+    "symbol": "GODREJ_CONSUMER_PRODUCTS",
+    "name": "Godrej Consumer Products",
+    "industry": "FMCG",
+    "price": 1246,
+    "pe": 93.8,
+    "pe5": 10,
+    "pe10": 7,
+    "eps": 13.2,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2025, "quarter": "Q4", "revenue": 2185, "profit": 248 },
+      { "year": 2025, "quarter": "Q3", "revenue": 2262, "profit": 342 },
+      { "year": 2025, "quarter": "Q2", "revenue": 2301, "profit": 393 },
+      { "year": 2025, "quarter": "Q1", "revenue": 2163, "profit": 368 }
+    ]
+  },
+  {
+    "symbol": "HCL_TECH",
+    "name": "HCL Tech",
+    "industry": "IT - Software",
+    "price": 1665,
+    "pe": 36.8,
+    "pe5": 9,
+    "pe10": 12,
+    "eps": 45.2,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2025, "quarter": "Q4", "revenue": 13432, "profit": 3045 },
+      { "year": 2025, "quarter": "Q3", "revenue": 13274, "profit": 3526 },
+      { "year": 2025, "quarter": "Q2", "revenue": 12615, "profit": 3216 },
+      { "year": 2025, "quarter": "Q1", "revenue": 11784, "profit": 2479 }
+    ]
+  },
+  {
+    "symbol": "HDFC_BANK",
+    "name": "HDFC Bank",
+    "industry": "Banking",
+    "price": 1928,
+    "pe": 21.9,
+    "pe5": 21,
+    "pe10": 20,
+    "eps": 88.01,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2025, "quarter": "Q4", "revenue": 77460, "profit": 17616 },
+      { "year": 2025, "quarter": "Q3", "revenue": 76007, "profit": 16736 },
+      { "year": 2025, "quarter": "Q2", "revenue": 74017, "profit": 16821 },
+      { "year": 2025, "quarter": "Q1", "revenue": 73033, "profit": 16175 }
+    ]
+  },
+  {
+    "symbol": "HINDALCO",
+    "name": "Hindalco Industries",
+    "industry": "Metals - Non Ferrous",
+    "price": 671.3,
+    "pe": 16.1,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 41.67,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 55300, "profit": 2600 },
+      { "year": 2024, "quarter": "Q3", "revenue": 54000, "profit": 2200 },
+      { "year": 2024, "quarter": "Q2", "revenue": 53000, "profit": 2100 },
+      { "year": 2024, "quarter": "Q1", "revenue": 52000, "profit": 2000 }
+    ]
+  },
+  {
+    "symbol": "HINDUSTAN_UNILEVER",
+    "name": "Hindustan Unilever",
+    "industry": "FMCG",
+    "price": 2421.7,
+    "pe": 54.2,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 44.69,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 15190, "profit": 2550 },
+      { "year": 2024, "quarter": "Q3", "revenue": 15000, "profit": 2400 },
+      { "year": 2024, "quarter": "Q2", "revenue": 14800, "profit": 2300 },
+      { "year": 2024, "quarter": "Q1", "revenue": 14600, "profit": 2200 }
+    ]
+  },
+  {
+    "symbol": "ICICI_BANK",
+    "name": "Icici Bank",
+    "industry": "Banking",
+    "price": 1112.8,
+    "pe": 19.5,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 57.13,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 37700, "profit": 10800 },
+      { "year": 2024, "quarter": "Q3", "revenue": 36500, "profit": 10500 },
+      { "year": 2024, "quarter": "Q2", "revenue": 35500, "profit": 10200 },
+      { "year": 2024, "quarter": "Q1", "revenue": 34500, "profit": 9900 }
+    ]
+  },
+  {
+    "symbol": "ICICI_LOMBARD_INSURANCE",
+    "name": "ICICI Lombard Insurance",
+    "industry": "Insurance",
+    "price": 1672.3,
+    "pe": 44.8,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 37.32,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 5630, "profit": 520 },
+      { "year": 2024, "quarter": "Q3", "revenue": 5500, "profit": 500 },
+      { "year": 2024, "quarter": "Q2", "revenue": 5400, "profit": 480 },
+      { "year": 2024, "quarter": "Q1", "revenue": 5300, "profit": 460 }
+    ]
+  },
+  {
+    "symbol": "IDFC_FIRST_BANK",
+    "name": "IDFC first bank",
+    "industry": "Banking",
+    "price": 80.6,
+    "pe": 18.9,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 4.27,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 8500, "profit": 720 },
+      { "year": 2024, "quarter": "Q3", "revenue": 8300, "profit": 700 },
+      { "year": 2024, "quarter": "Q2", "revenue": 8100, "profit": 680 },
+      { "year": 2024, "quarter": "Q1", "revenue": 7900, "profit": 650 }
+    ]
+  },
+  {
+    "symbol": "ITC",
+    "name": "Indian Tobacco Company",
+    "industry": "FMCG",
+    "price": 441.2,
+    "pe": 26.3,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 16.78,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 17000, "profit": 5400 },
+      { "year": 2024, "quarter": "Q3", "revenue": 16800, "profit": 5300 },
+      { "year": 2024, "quarter": "Q2", "revenue": 16500, "profit": 5200 },
+      { "year": 2024, "quarter": "Q1", "revenue": 16200, "profit": 5100 }
+    ]
+  },
+  {
+    "symbol": "SUN_PHARMA",
+    "name": "Sun Pharmaceutical Industries",
+    "industry": "Pharmaceuticals",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "SUPREME_INDUSTRIES",
+    "name": "Supreme Industries",
+    "industry": "Industrials",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "SURYODHAYA_BANK",
+    "name": "Suryodhaya bank",
+    "industry": "Banking",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TAMILNADU_MERCHANDILE_BANK",
+    "name": "Taminadu Merchandile Bank",
+    "industry": "Banking",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_CHEMICALS",
+    "name": "Tata Chemicals",
+    "industry": "Chemicals",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_CONSUMER_PRODUCTS",
+    "name": "Tata Consumer Products",
+    "industry": "FMCG",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_ELXSI",
+    "name": "Tata Elxsi",
+    "industry": "IT - Software",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_INVESTMENT_CORP",
+    "name": "Tata Investment Corp",
+    "industry": "Finance",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_MOTORS",
+    "name": "Tata Motors",
+    "industry": "Automobile",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_TECHNOLOGIES",
+    "name": "Tata technologies",
+    "industry": "IT - Software",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "ULTRATECH_CEMENT",
+    "name": "UltraTech Cement",
+    "industry": "Cement",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "DABUR_INDIA",
+    "name": "Dabur India",
+    "industry": "FMCG",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "DIVIS_LAB",
+    "name": "Divi's Lab",
+    "industry": "Pharmaceuticals",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "DR_REDDY_LABS",
+    "name": "Dr Reddy Labs",
+    "industry": "Pharmaceuticals",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "EICHER_MOTORS",
+    "name": "Eicher Motors",
+    "industry": "Automobile",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "EXIDE_INDUSTRIES",
+    "name": "Exide Industries",
+    "industry": "Auto Ancillaries",
+    "price": 389,
+    "pe": 30.7,
+    "pe5": 11,
+    "pe10": 9,
+    "eps": 12.67,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2025, "quarter": "Q4", "revenue": 4159, "profit": 255 },
+      { "year": 2025, "quarter": "Q3", "revenue": 3849, "profit": 245 },
+      { "year": 2025, "quarter": "Q2", "revenue": 4267, "profit": 298 },
+      { "year": 2025, "quarter": "Q1", "revenue": 4313, "profit": 280 }
+    ]
+  },
+  {
+    "symbol": "FEDERAL_BANK",
+    "name": "Federal Bank",
+    "industry": "Banking",
+    "price": 201,
+    "pe": 12.2,
+    "pe5": 15,
+    "pe10": 14,
+    "eps": 16.5,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2025, "quarter": "Q4", "revenue": 6648, "profit": 1030 },
+      { "year": 2025, "quarter": "Q3", "revenue": 6809, "profit": 955 },
+      { "year": 2025, "quarter": "Q2", "revenue": 6577, "profit": 1057 },
+      { "year": 2025, "quarter": "Q1", "revenue": 6331, "profit": 1010 }
+    ]
+  },
+  {
+    "symbol": "GODREJ_CONSUMER_PRODUCTS",
+    "name": "Godrej Consumer Products",
+    "industry": "FMCG",
+    "price": 1246,
+    "pe": 93.8,
+    "pe5": 10,
+    "pe10": 7,
+    "eps": 13.2,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2025, "quarter": "Q4", "revenue": 2185, "profit": 248 },
+      { "year": 2025, "quarter": "Q3", "revenue": 2262, "profit": 342 },
+      { "year": 2025, "quarter": "Q2", "revenue": 2301, "profit": 393 },
+      { "year": 2025, "quarter": "Q1", "revenue": 2163, "profit": 368 }
+    ]
+  },
+  {
+    "symbol": "HCL_TECH",
+    "name": "HCL Tech",
+    "industry": "IT - Software",
+    "price": 1665,
+    "pe": 36.8,
+    "pe5": 9,
+    "pe10": 12,
+    "eps": 45.2,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2025, "quarter": "Q4", "revenue": 13432, "profit": 3045 },
+      { "year": 2025, "quarter": "Q3", "revenue": 13274, "profit": 3526 },
+      { "year": 2025, "quarter": "Q2", "revenue": 12615, "profit": 3216 },
+      { "year": 2025, "quarter": "Q1", "revenue": 11784, "profit": 2479 }
+    ]
+  },
+  {
+    "symbol": "HDFC_BANK",
+    "name": "HDFC Bank",
+    "industry": "Banking",
+    "price": 1928,
+    "pe": 21.9,
+    "pe5": 21,
+    "pe10": 20,
+    "eps": 88.01,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2025, "quarter": "Q4", "revenue": 77460, "profit": 17616 },
+      { "year": 2025, "quarter": "Q3", "revenue": 76007, "profit": 16736 },
+      { "year": 2025, "quarter": "Q2", "revenue": 74017, "profit": 16821 },
+      { "year": 2025, "quarter": "Q1", "revenue": 73033, "profit": 16175 }
+    ]
+  },
+  {
+    "symbol": "HINDALCO",
+    "name": "Hindalco Industries",
+    "industry": "Metals - Non Ferrous",
+    "price": 671.3,
+    "pe": 16.1,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 41.67,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 55300, "profit": 2600 },
+      { "year": 2024, "quarter": "Q3", "revenue": 54000, "profit": 2200 },
+      { "year": 2024, "quarter": "Q2", "revenue": 53000, "profit": 2100 },
+      { "year": 2024, "quarter": "Q1", "revenue": 52000, "profit": 2000 }
+    ]
+  },
+  {
+    "symbol": "HINDUSTAN_UNILEVER",
+    "name": "Hindustan Unilever",
+    "industry": "FMCG",
+    "price": 2421.7,
+    "pe": 54.2,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 44.69,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 15190, "profit": 2550 },
+      { "year": 2024, "quarter": "Q3", "revenue": 15000, "profit": 2400 },
+      { "year": 2024, "quarter": "Q2", "revenue": 14800, "profit": 2300 },
+      { "year": 2024, "quarter": "Q1", "revenue": 14600, "profit": 2200 }
+    ]
+  },
+  {
+    "symbol": "ICICI_BANK",
+    "name": "Icici Bank",
+    "industry": "Banking",
+    "price": 1112.8,
+    "pe": 19.5,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 57.13,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 37700, "profit": 10800 },
+      { "year": 2024, "quarter": "Q3", "revenue": 36500, "profit": 10500 },
+      { "year": 2024, "quarter": "Q2", "revenue": 35500, "profit": 10200 },
+      { "year": 2024, "quarter": "Q1", "revenue": 34500, "profit": 9900 }
+    ]
+  },
+  {
+    "symbol": "ICICI_LOMBARD_INSURANCE",
+    "name": "ICICI Lombard Insurance",
+    "industry": "Insurance",
+    "price": 1672.3,
+    "pe": 44.8,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 37.32,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 5630, "profit": 520 },
+      { "year": 2024, "quarter": "Q3", "revenue": 5500, "profit": 500 },
+      { "year": 2024, "quarter": "Q2", "revenue": 5400, "profit": 480 },
+      { "year": 2024, "quarter": "Q1", "revenue": 5300, "profit": 460 }
+    ]
+  },
+  {
+    "symbol": "IDFC_FIRST_BANK",
+    "name": "IDFC first bank",
+    "industry": "Banking",
+    "price": 80.6,
+    "pe": 18.9,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 4.27,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 8500, "profit": 720 },
+      { "year": 2024, "quarter": "Q3", "revenue": 8300, "profit": 700 },
+      { "year": 2024, "quarter": "Q2", "revenue": 8100, "profit": 680 },
+      { "year": 2024, "quarter": "Q1", "revenue": 7900, "profit": 650 }
+    ]
+  },
+  {
+    "symbol": "ITC",
+    "name": "Indian Tobacco Company",
+    "industry": "FMCG",
+    "price": 441.2,
+    "pe": 26.3,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 16.78,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 17000, "profit": 5400 },
+      { "year": 2024, "quarter": "Q3", "revenue": 16800, "profit": 5300 },
+      { "year": 2024, "quarter": "Q2", "revenue": 16500, "profit": 5200 },
+      { "year": 2024, "quarter": "Q1", "revenue": 16200, "profit": 5100 }
+    ]
+  },
+  {
+    "symbol": "SUN_PHARMA",
+    "name": "Sun Pharmaceutical Industries",
+    "industry": "Pharmaceuticals",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "SUPREME_INDUSTRIES",
+    "name": "Supreme Industries",
+    "industry": "Industrials",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "SURYODHAYA_BANK",
+    "name": "Suryodhaya bank",
+    "industry": "Banking",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TAMILNADU_MERCHANDILE_BANK",
+    "name": "Taminadu Merchandile Bank",
+    "industry": "Banking",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_CHEMICALS",
+    "name": "Tata Chemicals",
+    "industry": "Chemicals",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_CONSUMER_PRODUCTS",
+    "name": "Tata Consumer Products",
+    "industry": "FMCG",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_ELXSI",
+    "name": "Tata Elxsi",
+    "industry": "IT - Software",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_INVESTMENT_CORP",
+    "name": "Tata Investment Corp",
+    "industry": "Finance",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_MOTORS",
+    "name": "Tata Motors",
+    "industry": "Automobile",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_TECHNOLOGIES",
+    "name": "Tata technologies",
+    "industry": "IT - Software",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "ULTRATECH_CEMENT",
+    "name": "UltraTech Cement",
+    "industry": "Cement",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "DABUR_INDIA",
+    "name": "Dabur India",
+    "industry": "FMCG",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "DIVIS_LAB",
+    "name": "Divi's Lab",
+    "industry": "Pharmaceuticals",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "DR_REDDY_LABS",
+    "name": "Dr Reddy Labs",
+    "industry": "Pharmaceuticals",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "EICHER_MOTORS",
+    "name": "Eicher Motors",
+    "industry": "Automobile",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "EXIDE_INDUSTRIES",
+    "name": "Exide Industries",
+    "industry": "Auto Ancillaries",
+    "price": 389,
+    "pe": 30.7,
+    "pe5": 11,
+    "pe10": 9,
+    "eps": 12.67,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2025, "quarter": "Q4", "revenue": 4159, "profit": 255 },
+      { "year": 2025, "quarter": "Q3", "revenue": 3849, "profit": 245 },
+      { "year": 2025, "quarter": "Q2", "revenue": 4267, "profit": 298 },
+      { "year": 2025, "quarter": "Q1", "revenue": 4313, "profit": 280 }
+    ]
+  },
+  {
+    "symbol": "FEDERAL_BANK",
+    "name": "Federal Bank",
+    "industry": "Banking",
+    "price": 201,
+    "pe": 12.2,
+    "pe5": 15,
+    "pe10": 14,
+    "eps": 16.5,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2025, "quarter": "Q4", "revenue": 6648, "profit": 1030 },
+      { "year": 2025, "quarter": "Q3", "revenue": 6809, "profit": 955 },
+      { "year": 2025, "quarter": "Q2", "revenue": 6577, "profit": 1057 },
+      { "year": 2025, "quarter": "Q1", "revenue": 6331, "profit": 1010 }
+    ]
+  },
+  {
+    "symbol": "GODREJ_CONSUMER_PRODUCTS",
+    "name": "Godrej Consumer Products",
+    "industry": "FMCG",
+    "price": 1246,
+    "pe": 93.8,
+    "pe5": 10,
+    "pe10": 7,
+    "eps": 13.2,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2025, "quarter": "Q4", "revenue": 2185, "profit": 248 },
+      { "year": 2025, "quarter": "Q3", "revenue": 2262, "profit": 342 },
+      { "year": 2025, "quarter": "Q2", "revenue": 2301, "profit": 393 },
+      { "year": 2025, "quarter": "Q1", "revenue": 2163, "profit": 368 }
+    ]
+  },
+  {
+    "symbol": "HCL_TECH",
+    "name": "HCL Tech",
+    "industry": "IT - Software",
+    "price": 1665,
+    "pe": 36.8,
+    "pe5": 9,
+    "pe10": 12,
+    "eps": 45.2,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2025, "quarter": "Q4", "revenue": 13432, "profit": 3045 },
+      { "year": 2025, "quarter": "Q3", "revenue": 13274, "profit": 3526 },
+      { "year": 2025, "quarter": "Q2", "revenue": 12615, "profit": 3216 },
+      { "year": 2025, "quarter": "Q1", "revenue": 11784, "profit": 2479 }
+    ]
+  },
+  {
+    "symbol": "HDFC_BANK",
+    "name": "HDFC Bank",
+    "industry": "Banking",
+    "price": 1928,
+    "pe": 21.9,
+    "pe5": 21,
+    "pe10": 20,
+    "eps": 88.01,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2025, "quarter": "Q4", "revenue": 77460, "profit": 17616 },
+      { "year": 2025, "quarter": "Q3", "revenue": 76007, "profit": 16736 },
+      { "year": 2025, "quarter": "Q2", "revenue": 74017, "profit": 16821 },
+      { "year": 2025, "quarter": "Q1", "revenue": 73033, "profit": 16175 }
+    ]
+  },
+  {
+    "symbol": "HINDALCO",
+    "name": "Hindalco Industries",
+    "industry": "Metals - Non Ferrous",
+    "price": 671.3,
+    "pe": 16.1,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 41.67,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 55300, "profit": 2600 },
+      { "year": 2024, "quarter": "Q3", "revenue": 54000, "profit": 2200 },
+      { "year": 2024, "quarter": "Q2", "revenue": 53000, "profit": 2100 },
+      { "year": 2024, "quarter": "Q1", "revenue": 52000, "profit": 2000 }
+    ]
+  },
+  {
+    "symbol": "HINDUSTAN_UNILEVER",
+    "name": "Hindustan Unilever",
+    "industry": "FMCG",
+    "price": 2421.7,
+    "pe": 54.2,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 44.69,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 15190, "profit": 2550 },
+      { "year": 2024, "quarter": "Q3", "revenue": 15000, "profit": 2400 },
+      { "year": 2024, "quarter": "Q2", "revenue": 14800, "profit": 2300 },
+      { "year": 2024, "quarter": "Q1", "revenue": 14600, "profit": 2200 }
+    ]
+  },
+  {
+    "symbol": "ICICI_BANK",
+    "name": "Icici Bank",
+    "industry": "Banking",
+    "price": 1112.8,
+    "pe": 19.5,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 57.13,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 37700, "profit": 10800 },
+      { "year": 2024, "quarter": "Q3", "revenue": 36500, "profit": 10500 },
+      { "year": 2024, "quarter": "Q2", "revenue": 35500, "profit": 10200 },
+      { "year": 2024, "quarter": "Q1", "revenue": 34500, "profit": 9900 }
+    ]
+  },
+  {
+    "symbol": "ICICI_LOMBARD_INSURANCE",
+    "name": "ICICI Lombard Insurance",
+    "industry": "Insurance",
+    "price": 1672.3,
+    "pe": 44.8,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 37.32,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 5630, "profit": 520 },
+      { "year": 2024, "quarter": "Q3", "revenue": 5500, "profit": 500 },
+      { "year": 2024, "quarter": "Q2", "revenue": 5400, "profit": 480 },
+      { "year": 2024, "quarter": "Q1", "revenue": 5300, "profit": 460 }
+    ]
+  },
+  {
+    "symbol": "IDFC_FIRST_BANK",
+    "name": "IDFC first bank",
+    "industry": "Banking",
+    "price": 80.6,
+    "pe": 18.9,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 4.27,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 8500, "profit": 720 },
+      { "year": 2024, "quarter": "Q3", "revenue": 8300, "profit": 700 },
+      { "year": 2024, "quarter": "Q2", "revenue": 8100, "profit": 680 },
+      { "year": 2024, "quarter": "Q1", "revenue": 7900, "profit": 650 }
+    ]
+  },
+  {
+    "symbol": "ITC",
+    "name": "Indian Tobacco Company",
+    "industry": "FMCG",
+    "price": 441.2,
+    "pe": 26.3,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 16.78,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 17000, "profit": 5400 },
+      { "year": 2024, "quarter": "Q3", "revenue": 16800, "profit": 5300 },
+      { "year": 2024, "quarter": "Q2", "revenue": 16500, "profit": 5200 },
+      { "year": 2024, "quarter": "Q1", "revenue": 16200, "profit": 5100 }
+    ]
+  },
+  {
+    "symbol": "SUN_PHARMA",
+    "name": "Sun Pharmaceutical Industries",
+    "industry": "Pharmaceuticals",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "SUPREME_INDUSTRIES",
+    "name": "Supreme Industries",
+    "industry": "Industrials",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "SURYODHAYA_BANK",
+    "name": "Suryodhaya bank",
+    "industry": "Banking",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TAMILNADU_MERCHANDILE_BANK",
+    "name": "Taminadu Merchandile Bank",
+    "industry": "Banking",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_CHEMICALS",
+    "name": "Tata Chemicals",
+    "industry": "Chemicals",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_CONSUMER_PRODUCTS",
+    "name": "Tata Consumer Products",
+    "industry": "FMCG",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_ELXSI",
+    "name": "Tata Elxsi",
+    "industry": "IT - Software",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_INVESTMENT_CORP",
+    "name": "Tata Investment Corp",
+    "industry": "Finance",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_MOTORS",
+    "name": "Tata Motors",
+    "industry": "Automobile",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_TECHNOLOGIES",
+    "name": "Tata technologies",
+    "industry": "IT - Software",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "ULTRATECH_CEMENT",
+    "name": "UltraTech Cement",
+    "industry": "Cement",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "DABUR_INDIA",
+    "name": "Dabur India",
+    "industry": "FMCG",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "DIVIS_LAB",
+    "name": "Divi's Lab",
+    "industry": "Pharmaceuticals",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "DR_REDDY_LABS",
+    "name": "Dr Reddy Labs",
+    "industry": "Pharmaceuticals",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "EICHER_MOTORS",
+    "name": "Eicher Motors",
+    "industry": "Automobile",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "EXIDE_INDUSTRIES",
+    "name": "Exide Industries",
+    "industry": "Auto Ancillaries",
+    "price": 389,
+    "pe": 30.7,
+    "pe5": 11,
+    "pe10": 9,
+    "eps": 12.67,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2025, "quarter": "Q4", "revenue": 4159, "profit": 255 },
+      { "year": 2025, "quarter": "Q3", "revenue": 3849, "profit": 245 },
+      { "year": 2025, "quarter": "Q2", "revenue": 4267, "profit": 298 },
+      { "year": 2025, "quarter": "Q1", "revenue": 4313, "profit": 280 }
+    ]
+  },
+  {
+    "symbol": "FEDERAL_BANK",
+    "name": "Federal Bank",
+    "industry": "Banking",
+    "price": 201,
+    "pe": 12.2,
+    "pe5": 15,
+    "pe10": 14,
+    "eps": 16.5,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2025, "quarter": "Q4", "revenue": 6648, "profit": 1030 },
+      { "year": 2025, "quarter": "Q3", "revenue": 6809, "profit": 955 },
+      { "year": 2025, "quarter": "Q2", "revenue": 6577, "profit": 1057 },
+      { "year": 2025, "quarter": "Q1", "revenue": 6331, "profit": 1010 }
+    ]
+  },
+  {
+    "symbol": "GODREJ_CONSUMER_PRODUCTS",
+    "name": "Godrej Consumer Products",
+    "industry": "FMCG",
+    "price": 1246,
+    "pe": 93.8,
+    "pe5": 10,
+    "pe10": 7,
+    "eps": 13.2,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2025, "quarter": "Q4", "revenue": 2185, "profit": 248 },
+      { "year": 2025, "quarter": "Q3", "revenue": 2262, "profit": 342 },
+      { "year": 2025, "quarter": "Q2", "revenue": 2301, "profit": 393 },
+      { "year": 2025, "quarter": "Q1", "revenue": 2163, "profit": 368 }
+    ]
+  },
+  {
+    "symbol": "HCL_TECH",
+    "name": "HCL Tech",
+    "industry": "IT - Software",
+    "price": 1665,
+    "pe": 36.8,
+    "pe5": 9,
+    "pe10": 12,
+    "eps": 45.2,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2025, "quarter": "Q4", "revenue": 13432, "profit": 3045 },
+      { "year": 2025, "quarter": "Q3", "revenue": 13274, "profit": 3526 },
+      { "year": 2025, "quarter": "Q2", "revenue": 12615, "profit": 3216 },
+      { "year": 2025, "quarter": "Q1", "revenue": 11784, "profit": 2479 }
+    ]
+  },
+  {
+    "symbol": "HDFC_BANK",
+    "name": "HDFC Bank",
+    "industry": "Banking",
+    "price": 1928,
+    "pe": 21.9,
+    "pe5": 21,
+    "pe10": 20,
+    "eps": 88.01,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2025, "quarter": "Q4", "revenue": 77460, "profit": 17616 },
+      { "year": 2025, "quarter": "Q3", "revenue": 76007, "profit": 16736 },
+      { "year": 2025, "quarter": "Q2", "revenue": 74017, "profit": 16821 },
+      { "year": 2025, "quarter": "Q1", "revenue": 73033, "profit": 16175 }
+    ]
+  },
+  {
+    "symbol": "HINDALCO",
+    "name": "Hindalco Industries",
+    "industry": "Metals - Non Ferrous",
+    "price": 671.3,
+    "pe": 16.1,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 41.67,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 55300, "profit": 2600 },
+      { "year": 2024, "quarter": "Q3", "revenue": 54000, "profit": 2200 },
+      { "year": 2024, "quarter": "Q2", "revenue": 53000, "profit": 2100 },
+      { "year": 2024, "quarter": "Q1", "revenue": 52000, "profit": 2000 }
+    ]
+  },
+  {
+    "symbol": "HINDUSTAN_UNILEVER",
+    "name": "Hindustan Unilever",
+    "industry": "FMCG",
+    "price": 2421.7,
+    "pe": 54.2,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 44.69,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 15190, "profit": 2550 },
+      { "year": 2024, "quarter": "Q3", "revenue": 15000, "profit": 2400 },
+      { "year": 2024, "quarter": "Q2", "revenue": 14800, "profit": 2300 },
+      { "year": 2024, "quarter": "Q1", "revenue": 14600, "profit": 2200 }
+    ]
+  },
+  {
+    "symbol": "ICICI_BANK",
+    "name": "Icici Bank",
+    "industry": "Banking",
+    "price": 1112.8,
+    "pe": 19.5,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 57.13,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 37700, "profit": 10800 },
+      { "year": 2024, "quarter": "Q3", "revenue": 36500, "profit": 10500 },
+      { "year": 2024, "quarter": "Q2", "revenue": 35500, "profit": 10200 },
+      { "year": 2024, "quarter": "Q1", "revenue": 34500, "profit": 9900 }
+    ]
+  },
+  {
+    "symbol": "ICICI_LOMBARD_INSURANCE",
+    "name": "ICICI Lombard Insurance",
+    "industry": "Insurance",
+    "price": 1672.3,
+    "pe": 44.8,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 37.32,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 5630, "profit": 520 },
+      { "year": 2024, "quarter": "Q3", "revenue": 5500, "profit": 500 },
+      { "year": 2024, "quarter": "Q2", "revenue": 5400, "profit": 480 },
+      { "year": 2024, "quarter": "Q1", "revenue": 5300, "profit": 460 }
+    ]
+  },
+  {
+    "symbol": "IDFC_FIRST_BANK",
+    "name": "IDFC first bank",
+    "industry": "Banking",
+    "price": 80.6,
+    "pe": 18.9,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 4.27,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 8500, "profit": 720 },
+      { "year": 2024, "quarter": "Q3", "revenue": 8300, "profit": 700 },
+      { "year": 2024, "quarter": "Q2", "revenue": 8100, "profit": 680 },
+      { "year": 2024, "quarter": "Q1", "revenue": 7900, "profit": 650 }
+    ]
+  },
+  {
+    "symbol": "ITC",
+    "name": "Indian Tobacco Company",
+    "industry": "FMCG",
+    "price": 441.2,
+    "pe": 26.3,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 16.78,
+    "recommendation": "",
+    "quarters": [
+      { "year": 2024, "quarter": "Q4", "revenue": 17000, "profit": 5400 },
+      { "year": 2024, "quarter": "Q3", "revenue": 16800, "profit": 5300 },
+      { "year": 2024, "quarter": "Q2", "revenue": 16500, "profit": 5200 },
+      { "year": 2024, "quarter": "Q1", "revenue": 16200, "profit": 5100 }
+    ]
+  },
+  {
+    "symbol": "SUN_PHARMA",
+    "name": "Sun Pharmaceutical Industries",
+    "industry": "Pharmaceuticals",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "SUPREME_INDUSTRIES",
+    "name": "Supreme Industries",
+    "industry": "Industrials",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "SURYODHAYA_BANK",
+    "name": "Suryodhaya bank",
+    "industry": "Banking",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TAMILNADU_MERCHANDILE_BANK",
+    "name": "Taminadu Merchandile Bank",
+    "industry": "Banking",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_CHEMICALS",
+    "name": "Tata Chemicals",
+    "industry": "Chemicals",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_CONSUMER_PRODUCTS",
+    "name": "Tata Consumer Products",
+    "industry": "FMCG",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_ELXSI",
+    "name": "Tata Elxsi",
+    "industry": "IT - Software",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_INVESTMENT_CORP",
+    "name": "Tata Investment Corp",
+    "industry": "Finance",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_MOTORS",
+    "name": "Tata Motors",
+    "industry": "Automobile",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "TATA_TECHNOLOGIES",
+    "name": "Tata technologies",
+    "industry": "IT - Software",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
+  },
+  {
+    "symbol": "ULTRATECH_CEMENT",
+    "name": "UltraTech Cement",
+    "industry": "Cement",
+    "price": 0,
+    "pe": 0,
+    "pe5": 0,
+    "pe10": 0,
+    "eps": 0,
+    "recommendation": "",
+    "quarters": []
   }
 ]
