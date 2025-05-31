@@ -122,7 +122,7 @@ const Stocks = () => {
               getRowKey={(row) => row.symbol}
               renderActions={(row) => (
                 <EvolveButton sx={{ mt: 1 }} onClick={() => navigate(`/stocks/${row.symbol}`)}>
-                  View Details
+                  View
                 </EvolveButton>
               )}
               loading={loading}

@@ -48,6 +48,11 @@ export default function CompanyDetails() {
           emptyMessage="No companies found."
           enableStriped={true}
           enableHover={true}
+          renderActions={row => (
+            <EvolveButton onClick={() => navigate(`/stocks/${row.symbol}`)}>
+              View
+            </EvolveButton>
+          )}
         />
       </Box>
     </Box>
