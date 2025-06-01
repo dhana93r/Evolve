@@ -1,6 +1,8 @@
 import React from 'react';
 import { Accordion, AccordionSummary, AccordionDetails, Typography, Box, useMediaQuery, useTheme } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Loading from '../components/Loading';
+import Error from '../components/Error';
 
 const peContent = (
   <Box>

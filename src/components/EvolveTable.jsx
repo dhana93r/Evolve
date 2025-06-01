@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import PropTypes from 'prop-types';
 
 export default function EvolveTable({ columns, rows, getRowKey, renderActions, enableStriped = true, enableHover = true, emptyMessage = 'No data available', loading = false }) {
   return (
@@ -77,3 +78,14 @@ export default function EvolveTable({ columns, rows, getRowKey, renderActions, e
     </TableContainer>
   );
 }
+
+EvolveTable.propTypes = {
+  columns: PropTypes.array.isRequired,
+  rows: PropTypes.array.isRequired,
+  getRowKey: PropTypes.func.isRequired,
+  renderActions: PropTypes.func,
+  enableStriped: PropTypes.bool,
+  enableHover: PropTypes.bool,
+  emptyMessage: PropTypes.string,
+  loading: PropTypes.bool,
+};

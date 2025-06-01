@@ -1,29 +1,41 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, Typography, Box, Stack, MenuItem, Select, FormControl, InputLabel, Paper, Chip, Card, CardContent } from '@mui/material';
 import { EvolveButton } from '../components';
 import { calculateFairValue, getRecommendation } from '../utils';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
+import { Bar } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip as ChartTooltip,
+  Legend,
+} from 'chart.js';
+import { useStocks } from '../hooks/useStocks';
+import Loading from '../components/Loading';
+import Error from '../components/Error';
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, ChartTooltip, Legend);
 
 const StockDetails = () => {
   const { symbol } = useParams();
+  const { stocks, loading, error } = useStocks();
   const [stock, setStock] = useState(null);
   const [year, setYear] = useState('');
   const [quarter, setQuarter] = useState('');
   const [chartData, setChartData] = useState([]);
 
   useEffect(() => {
-    fetch('/src/stocks.json')
-      .then((res) => res.json())
-      .then((data) => {
-        const s = data.find((x) => x.symbol === symbol);
-        setStock(s);
-        if (s && s.quarters && s.quarters.length) {
-          setYear(s.quarters[0].year);
-          setQuarter(s.quarters[0].quarter);
-        }
-      });
-  }, [symbol]);
+    if (!stocks.length) return;
+    const s = stocks.find((x) => x.symbol === symbol);
+    setStock(s);
+    if (s && s.quarters && s.quarters.length) {
+      setYear(s.quarters[0].year);
+      setQuarter(s.quarters[0].quarter);
+    }
+  }, [symbol, stocks]);
 
   useEffect(() => {
     if (stock && stock.quarters) {
@@ -34,10 +46,61 @@ const StockDetails = () => {
     }
   }, [stock, year, quarter]);
 
+  const fairValue10 = stock ? calculateFairValue(stock, 'pe10') : '';
+  const fairValue5 = stock ? calculateFairValue(stock, 'pe5') : '';
+  const recommendation = stock ? getRecommendation(stock) : {};
+
+  // Memoize chart data and options for performance
+  const chartJsData = useMemo(() => ({
+    labels: chartData.map((d) => d.quarter),
+    datasets: [
+      {
+        label: 'Revenue',
+        data: chartData.map((d) => d.revenue),
+        backgroundColor: 'rgba(25, 118, 210, 0.7)',
+        borderRadius: 6,
+        maxBarThickness: 40,
+      },
+      {
+        label: 'Profit',
+        data: chartData.map((d) => d.profit),
+        backgroundColor: 'rgba(191, 164, 111, 0.7)',
+        borderRadius: 6,
+        maxBarThickness: 40,
+      },
+    ],
+  }), [chartData]);
+
+  const chartJsOptions = useMemo(() => ({
+    responsive: true,
+    plugins: {
+      legend: { position: 'top' },
+      title: { display: false },
+      tooltip: {
+        enabled: true,
+        callbacks: {
+          label: (context) =>
+            ` ${context.dataset.label}: $${context.parsed.y?.toLocaleString()}`,
+        },
+      },
+    },
+    scales: {
+      x: { title: { display: true, text: 'Quarter' } },
+      y: {
+        title: { display: true, text: 'Value' },
+        beginAtZero: true,
+        ticks: {
+          callback: function (value) {
+            return '$' + value.toLocaleString();
+          },
+        },
+      },
+    },
+  }), []);
+
+  if (loading) return <Loading />;
+  if (error) return <Error message={error} />;
   if (!stock) return <Typography>Stock not found.</Typography>;
-  const fairValue10 = calculateFairValue(stock, 'pe10');
-  const fairValue5 = calculateFairValue(stock, 'pe5');
-  const recommendation = getRecommendation(stock);
 
   return (
     <Box
@@ -132,16 +195,9 @@ const StockDetails = () => {
               </Select>
             </FormControl>
           </Stack>
-          <ResponsiveContainer width="100%" height={250}>
-            <BarChart data={chartData} margin={{ top: 10, right: 10, left: 0, bottom: 10 }}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="quarter" />
-              <YAxis />
-              <Tooltip />
-              <Bar dataKey="revenue" fill="#1976d2" name="Revenue" />
-              <Bar dataKey="profit" fill="#bfa46f" name="Profit" />
-            </BarChart>
-          </ResponsiveContainer>
+          <Box sx={{ width: '100%', height: 250 }}>
+            <Bar data={chartJsData} options={chartJsOptions} />
+          </Box>
         </Paper>
         <EvolveButton sx={{ mt: 3, width: { xs: '100%', sm: 'auto' } }} variant="outlined" onClick={() => window.history.back()}>
           Back

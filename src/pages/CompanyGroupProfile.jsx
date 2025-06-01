@@ -1,6 +1,8 @@
 import React from 'react';
 import { Typography, Box, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Loading from '../components/Loading';
+import Error from '../components/Error';
 
 // Tata group structure for Accordions
 const tataSegments = [

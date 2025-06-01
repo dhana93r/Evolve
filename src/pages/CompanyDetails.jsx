@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Box, Typography, TextField } from '@mui/material';
-import { EvolveTable } from '../components';
-import stocksData from '../stocks.json';
+import { EvolveTable, EvolveButton, Loading, Error } from '../components';
+import { useNavigate } from 'react-router-dom';
+import { useStocks } from '../hooks/useStocks';
 
 const columns = [
   { id: 'name', label: 'Name', align: 'center', sx: { fontSize: { xs: '0.95rem', sm: '1rem' }, px: { xs: 0.5, sm: 2 } } },
@@ -11,21 +12,20 @@ const columns = [
 
 export default function CompanyDetails() {
   const [query, setQuery] = React.useState('');
-  const [results, setResults] = React.useState(stocksData);
+  const { stocks: results, loading, error } = useStocks();
+  const navigate = useNavigate();
 
-  React.useEffect(() => {
-    if (!query) {
-      setResults(stocksData);
-    } else {
-      setResults(
-        stocksData.filter(
-          (stock) =>
-            stock.name.toLowerCase().includes(query.toLowerCase()) ||
-            stock.symbol.toLowerCase().includes(query.toLowerCase())
-        )
-      );
-    }
-  }, [query]);
+  const filteredResults = React.useMemo(() => {
+    if (!query) return results;
+    return results.filter(
+      (stock) =>
+        stock.name.toLowerCase().includes(query.toLowerCase()) ||
+        stock.symbol.toLowerCase().includes(query.toLowerCase())
+    );
+  }, [query, results]);
+
+  if (loading) return <Loading />;
+  if (error) return <Error message={error} />;
 
   return (
     <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', px: { xs: 1, sm: 2 }, width: '100vw', boxSizing: 'border-box', overflowX: 'hidden' }}>
@@ -43,13 +43,13 @@ export default function CompanyDetails() {
         />
         <EvolveTable
           columns={columns}
-          rows={results}
-          getRowKey={row => row.symbol}
+          rows={filteredResults}
+          getRowKey={row => `${row.symbol}_${row.name}`}
           emptyMessage="No companies found."
           enableStriped={true}
           enableHover={true}
           renderActions={row => (
-            <EvolveButton onClick={() => navigate(`/stocks/${row.symbol}`)}>
+            <EvolveButton onClick={() => navigate(`/stocks/${row.symbol}`)} aria-label={`View details for ${row.name}`}>
               View
             </EvolveButton>
           )}

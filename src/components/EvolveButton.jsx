@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/system';
+import PropTypes from 'prop-types';
 
 const CustomButton = styled(Button)(({ theme }) => ({
   fontFamily: 'inherit',
@@ -37,3 +38,7 @@ const CustomButton = styled(Button)(({ theme }) => ({
 export default function EvolveButton(props) {
   return <CustomButton {...props}>{props.children}</CustomButton>;
 }
+
+EvolveButton.propTypes = {
+  children: PropTypes.node.isRequired,
+};

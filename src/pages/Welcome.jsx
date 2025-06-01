@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { EvolveAlert } from '../components';
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
+import Loading from '../components/Loading';
+import Error from '../components/Error';
 
 const Welcome = () => {
   const navigate = useNavigate();
