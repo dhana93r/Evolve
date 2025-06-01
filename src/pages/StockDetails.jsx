@@ -32,8 +32,11 @@ const StockDetails = () => {
     const s = stocks.find((x) => x.symbol === symbol);
     setStock(s);
     if (s && s.quarters && s.quarters.length) {
-      setYear(s.quarters[0].year);
-      setQuarter(s.quarters[0].quarter);
+      // Find the latest year
+      const years = s.quarters.map(q => q.year);
+      const maxYear = Math.max(...years);
+      setYear(maxYear);
+      setQuarter(''); // Default to 'All'
     }
   }, [symbol, stocks]);
 
