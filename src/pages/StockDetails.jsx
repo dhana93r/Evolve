@@ -3,7 +3,8 @@ import { useParams } from 'react-router-dom';
 import { Container, Typography, Box, Stack, MenuItem, Select, FormControl, InputLabel, Paper, Chip, Card, CardContent } from '@mui/material';
 import { EvolveButton } from '../components';
 import { calculateFairValue, getRecommendation, formatRupee } from '../utils';
-import { Bar } from 'react-chartjs-2';
+import StockBarChart from '../components/StockBarChart';
+import ChartSwitcher from '../components/ChartSwitcher';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -102,6 +103,57 @@ const StockDetails = () => {
     },
   }), [chartData]);
 
+  // Memoize area chart data and options for performance
+  const areaChartData = useMemo(() => ({
+    labels: chartData.map((d) => d.quarter),
+    datasets: [
+      {
+        label: 'Revenue',
+        data: chartData.map((d) => d.revenue),
+        fill: true,
+        backgroundColor: 'rgba(25, 118, 210, 0.2)',
+        borderColor: 'rgba(25, 118, 210, 1)',
+        tension: 0.4,
+        pointRadius: 3,
+      },
+      {
+        label: 'Profit',
+        data: chartData.map((d) => d.profit),
+        fill: true,
+        backgroundColor: 'rgba(191, 164, 111, 0.2)',
+        borderColor: 'rgba(191, 164, 111, 1)',
+        tension: 0.4,
+        pointRadius: 3,
+      },
+    ],
+  }), [chartData]);
+
+  const areaChartOptions = useMemo(() => ({
+    responsive: true,
+    plugins: {
+      legend: { position: 'top' },
+      title: { display: false },
+      tooltip: {
+        enabled: true,
+        callbacks: {
+          label: (context) => ` ${context.dataset.label}: ${formatRupee(context.parsed.y)}`,
+        },
+      },
+    },
+    scales: {
+      x: { title: { display: true, text: 'Quarter' } },
+      y: {
+        title: { display: true, text: 'Value' },
+        beginAtZero: true,
+        ticks: {
+          callback: function (value) {
+            return formatRupee(value);
+          },
+        },
+      },
+    },
+  }), [chartData]);
+
   if (loading) return <Loading />;
   if (error) return <Error message={error} />;
   if (!stock) return <Typography>Stock not found.</Typography>;
@@ -123,9 +175,9 @@ const StockDetails = () => {
     >
       <Box
         sx={{
-          width: '100%',
-          maxWidth: 480,
-          minWidth: { xs: '90vw', sm: 400 },
+          width: '100vw', // Ensure full viewport width
+          maxWidth: '100vw', // Prevent overflow on mobile
+          minWidth: 0, // Remove minWidth constraint
           mx: 'auto',
           boxSizing: 'border-box',
           display: 'flex',
@@ -179,7 +231,8 @@ const StockDetails = () => {
             maxWidth: 500,
             mx: 'auto',
             borderRadius: { xs: 2, sm: 3 },
-            overflowX: 'auto',
+            overflow: 'visible', // Remove scrollbars
+            boxSizing: 'border-box',
           }}
         >
           <Stack direction="row" spacing={2} mb={2} justifyContent="center" sx={{ flexWrap: 'wrap', gap: { xs: 1, sm: 2 } }}>
@@ -197,8 +250,15 @@ const StockDetails = () => {
               </Select>
             </FormControl>
           </Stack>
-          <Box sx={{ width: '100%', height: 250 }}>
-            <Bar data={chartJsData} options={chartJsOptions} />
+          <Box sx={{ width: '100%', height: 250, overflow: 'visible' }}>
+            <ChartSwitcher
+              barData={chartJsData}
+              barOptions={chartJsOptions}
+              areaData={areaChartData}
+              areaOptions={areaChartOptions}
+              initialType="bar"
+              height={250}
+            />
           </Box>
         </Paper>
         <EvolveButton sx={{ mt: 3, width: { xs: '100%', sm: 'auto' } }} variant="outlined" onClick={() => window.history.back()}>
