@@ -7,6 +7,8 @@ import { useStocks } from '../hooks/useStocks';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
 import Box from '@mui/material/Box';
+import Rupee from '../components/Rupee';
+import { formatRupee } from '../utils/rupee';
 
 const Stocks = () => {
   const { stocks, loading, error } = useStocks();
@@ -36,7 +38,7 @@ const Stocks = () => {
   const columns = [
     { id: 'name', label: 'Name', align: 'center', sx: { fontSize: { xs: '0.95rem', sm: '1rem' }, px: { xs: 0.5, sm: 2 } } },
     { id: 'industry', label: 'Industry', align: 'center', sx: { fontSize: { xs: '0.95rem', sm: '1rem' }, px: { xs: 0.5, sm: 2 } } },
-    { id: 'price', label: 'Current Price', align: 'center', sx: { fontSize: { xs: '0.95rem', sm: '1rem' }, px: { xs: 0.5, sm: 2 } } },
+    { id: 'price', label: 'Current Price', align: 'center', sx: { fontSize: { xs: '0.95rem', sm: '1rem' }, px: { xs: 0.5, sm: 2 } }, render: row => <><Rupee size={15} /> {formatRupee(row.price)}</> },
   ];
 
   if (loading) {
@@ -58,20 +60,20 @@ const Stocks = () => {
         width: '100vw',
         boxSizing: 'border-box',
         overflowX: 'hidden',
+        bgcolor: 'background.default',
       }}
     >
-      <Container
-        maxWidth="md"
+      <Box
         sx={{
-          py: 4,
+          width: '100%',
+          maxWidth: 480,
+          minWidth: { xs: '90vw', sm: 400 },
+          mx: 'auto',
+          boxSizing: 'border-box',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          width: '100%',
-          maxWidth: 600,
-          mx: 'auto',
-          boxSizing: 'border-box',
-          overflowX: 'hidden',
+          py: 4,
         }}
       >
         <Typography variant="h4" fontWeight={700} gutterBottom align="center" sx={{ fontSize: { xs: '1.5rem', sm: '2.1rem' } }}>
@@ -134,7 +136,7 @@ const Stocks = () => {
             />
           </Stack>
         )}
-      </Container>
+      </Box>
     </Box>
   );
 };

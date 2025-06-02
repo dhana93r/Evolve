@@ -3,11 +3,14 @@ import { Box, Typography, TextField } from '@mui/material';
 import { EvolveTable, EvolveButton, Loading, Error } from '../components';
 import { useNavigate } from 'react-router-dom';
 import { useStocks } from '../hooks/useStocks';
+import Rupee from '../components/Rupee';
+import { formatRupee } from '../utils/rupee';
 
 const columns = [
   { id: 'name', label: 'Name', align: 'center', sx: { fontSize: { xs: '0.95rem', sm: '1rem' }, px: { xs: 0.5, sm: 2 } } },
   { id: 'symbol', label: 'Symbol', align: 'center', sx: { fontSize: { xs: '0.95rem', sm: '1rem' }, px: { xs: 0.5, sm: 2 } } },
   { id: 'industry', label: 'Industry', align: 'center', sx: { fontSize: { xs: '0.95rem', sm: '1rem' }, px: { xs: 0.5, sm: 2 } } },
+  { id: 'price', label: 'Current Price', align: 'center', sx: { fontSize: { xs: '0.95rem', sm: '1rem' }, px: { xs: 0.5, sm: 2 } }, render: row => <><Rupee size={15} /> {formatRupee(row.price)}</> },
 ];
 
 export default function CompanyDetails() {
@@ -28,8 +31,33 @@ export default function CompanyDetails() {
   if (error) return <Error message={error} />;
 
   return (
-    <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', px: { xs: 1, sm: 2 }, width: '100vw', boxSizing: 'border-box', overflowX: 'hidden' }}>
-      <Box maxWidth="md" sx={{ py: 4, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', px: { xs: 0.5, sm: 2 }, width: '100%', maxWidth: 600, mx: 'auto', boxSizing: 'border-box', overflowX: 'hidden' }}>
+    <Box
+      sx={{
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        px: { xs: 1, sm: 2 },
+        width: '100vw',
+        boxSizing: 'border-box',
+        overflowX: 'hidden',
+        bgcolor: 'background.default',
+      }}
+    >
+      <Box
+        sx={{
+          width: '100%',
+          maxWidth: 480,
+          minWidth: { xs: '90vw', sm: 400 },
+          mx: 'auto',
+          boxSizing: 'border-box',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          py: 4,
+        }}
+      >
         <Typography variant="h4" fontWeight={700} mb={2}>
           Company Details
         </Typography>

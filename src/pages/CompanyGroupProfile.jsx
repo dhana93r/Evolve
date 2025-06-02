@@ -192,43 +192,59 @@ export default function CompanyGroupProfile() {
 		<Box
 			sx={{
 				minHeight: '100vh',
-				py: { xs: 2, md: 6 },
-				px: 0,
-				bgcolor: 'background.default',
 				display: 'flex',
 				flexDirection: 'column',
+				justifyContent: 'center',
 				alignItems: 'center',
+				px: { xs: 1, sm: 2 },
 				width: '100vw',
 				boxSizing: 'border-box',
 				overflowX: 'hidden',
+				bgcolor: 'background.default',
 			}}
 		>
-			<Typography variant="h4" fontWeight={700} align="center" mb={4}>
-				Group companies information
-			</Typography>
 			<Box
 				sx={{
 					width: '100%',
-					maxWidth: { xs: '100%', sm: '900px' },
+					maxWidth: 480,
+					minWidth: { xs: '90vw', sm: 400 },
 					mx: 'auto',
-					boxShadow: { xs: 0, md: 2 },
-					borderRadius: { xs: 0, sm: 2 },
-					bgcolor: 'background.paper',
 					boxSizing: 'border-box',
-					overflowX: 'hidden',
+					display: 'flex',
+					flexDirection: 'column',
+					alignItems: 'center',
+					py: 4,
 				}}
 			>
-				<Accordion defaultExpanded TransitionProps={{ unmountOnExit: true }} sx={{ width: '100%' }}>
-					<AccordionSummary expandIcon={<ExpandMoreIcon />}>
-						<Typography fontWeight={700}>Tata Sons</Typography>
-					</AccordionSummary>
-					<AccordionDetails>
-						{tataSegments.map((segment) => (
-							<CompanyAccordion key={segment.label} segment={segment} />
-						))}
-					</AccordionDetails>
-				</Accordion>
+				<Typography variant="h4" fontWeight={700} align="center" mb={4}>
+					Group companies information
+				</Typography>
+				<Box
+					sx={{
+						width: '100%',
+						maxWidth: { xs: '100%', sm: '900px' },
+						mx: 'auto',
+						boxShadow: { xs: 0, md: 2 },
+						borderRadius: { xs: 0, sm: 2 },
+						bgcolor: 'background.paper',
+						boxSizing: 'border-box',
+						overflowX: 'hidden',
+					}}
+				>
+					<Accordion defaultExpanded TransitionProps={{ unmountOnExit: true }} sx={{ width: '100%' }}>
+						<AccordionSummary expandIcon={<ExpandMoreIcon />}>
+							<Typography fontWeight={700}>Tata Sons</Typography>
+						</AccordionSummary>
+						<AccordionDetails>
+							{tataSegments.map((segment) => (
+								<CompanyAccordion key={segment.label} segment={segment} />
+							))}
+						</AccordionDetails>
+					</Accordion>
+				</Box>
 			</Box>
 		</Box>
 	);
 }
+
+// No currency values to update in this file. No changes needed for Rupee or formatRupee.

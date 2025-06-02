@@ -2,7 +2,7 @@ import React, { useEffect, useState, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, Typography, Box, Stack, MenuItem, Select, FormControl, InputLabel, Paper, Chip, Card, CardContent } from '@mui/material';
 import { EvolveButton } from '../components';
-import { calculateFairValue, getRecommendation } from '../utils';
+import { calculateFairValue, getRecommendation, formatRupee } from '../utils';
 import { Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -16,6 +16,7 @@ import {
 import { useStocks } from '../hooks/useStocks';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
+import Rupee from '../components/Rupee';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, ChartTooltip, Legend);
 
@@ -83,7 +84,7 @@ const StockDetails = () => {
         enabled: true,
         callbacks: {
           label: (context) =>
-            ` ${context.dataset.label}: $${context.parsed.y?.toLocaleString()}`,
+            ` ${context.dataset.label}: ${formatRupee(context.parsed.y)}`,
         },
       },
     },
@@ -94,12 +95,12 @@ const StockDetails = () => {
         beginAtZero: true,
         ticks: {
           callback: function (value) {
-            return '$' + value.toLocaleString();
+            return formatRupee(value);
           },
         },
       },
     },
-  }), []);
+  }), [chartData]);
 
   if (loading) return <Loading />;
   if (error) return <Error message={error} />;
@@ -117,22 +118,20 @@ const StockDetails = () => {
         width: '100vw',
         boxSizing: 'border-box',
         overflowX: 'hidden',
+        bgcolor: 'background.default',
       }}
     >
-      <Container
-        maxWidth="sm"
+      <Box
         sx={{
-          py: 4,
+          width: '100%',
+          maxWidth: 480,
+          minWidth: { xs: '90vw', sm: 400 },
+          mx: 'auto',
+          boxSizing: 'border-box',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          textAlign: 'center',
-          px: { xs: 0.5, sm: 2 },
-          width: '100%',
-          maxWidth: 500,
-          mx: 'auto',
-          boxSizing: 'border-box',
-          overflowX: 'hidden',
+          py: 4,
         }}
       >
         <Card
@@ -164,12 +163,12 @@ const StockDetails = () => {
             <Typography variant="subtitle1" color="text.secondary">{stock.industry}</Typography>
             <Box mt={2}>
               <Typography>PE: {stock.pe}</Typography>
-              <Typography>EPS: {stock.eps}</Typography>
-              <Typography>Price: {stock.price}</Typography>
+              <Typography>EPS: {formatRupee(stock.eps)}</Typography>
+              <Typography>Price: <Rupee size={18} /> {formatRupee(stock.price)}</Typography>
               <Typography>Median 10yr PE: {stock.pe10}</Typography>
               <Typography>Median 5yr PE: {stock.pe5}</Typography>
-              <Typography sx={{ fontWeight: 600, color: 'primary.main' }}>Fair Value (10yr): {fairValue10}</Typography>
-              <Typography sx={{ fontWeight: 600, color: 'secondary.main' }}>Fair Value (5yr): {fairValue5}</Typography>
+              <Typography sx={{ fontWeight: 600, color: 'primary.main' }}>Fair Value (10yr): {formatRupee(fairValue10)}</Typography>
+              <Typography sx={{ fontWeight: 600, color: 'secondary.main' }}>Fair Value (5yr): {formatRupee(fairValue5)}</Typography>
             </Box>
           </CardContent>
         </Card>
@@ -205,7 +204,7 @@ const StockDetails = () => {
         <EvolveButton sx={{ mt: 3, width: { xs: '100%', sm: 'auto' } }} variant="outlined" onClick={() => window.history.back()}>
           Back
         </EvolveButton>
-      </Container>
+      </Box>
     </Box>
   );
 };

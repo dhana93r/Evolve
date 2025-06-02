@@ -41,9 +41,22 @@ const Welcome = () => {
         width: '100vw',
         boxSizing: 'border-box',
         overflowX: 'hidden',
+        bgcolor: 'background.default',
       }}
     >
-      <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100%', maxWidth: 480, mx: 'auto', boxSizing: 'border-box', overflowX: 'hidden' }}>
+      <Box
+        sx={{
+          width: '100%',
+          maxWidth: 480,
+          minWidth: { xs: '90vw', sm: 400 },
+          mx: 'auto',
+          boxSizing: 'border-box',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          py: 4,
+        }}
+      >
         <Dialog
           open={alertOpen}
           onClose={() => setAlertOpen(false)}
@@ -76,3 +89,5 @@ const Welcome = () => {
 };
 
 export default Welcome;
+
+// No currency values to update in this file. No changes needed for Rupee or formatRupee.

@@ -4,5 +4,6 @@ export { default as EvolveButton } from './EvolveButton';
 export { default as EvolveAlert } from './EvolveAlert';
 export { default as Loading } from './Loading';
 export { default as Error } from './Error';
+export { default as Rupee } from './Rupee';
 // export { default as Footer } from './Footer';
 // export { default as Header } from './Header';

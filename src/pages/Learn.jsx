@@ -71,9 +71,22 @@ export default function Learn() {
         width: '100vw',
         boxSizing: 'border-box',
         overflowX: 'hidden',
+        bgcolor: 'background.default',
       }}
     >
-      <Box sx={{ maxWidth: 900, mx: 'auto', p: { xs: 2, sm: 4, md: 6 }, width: '100%', boxSizing: 'border-box', overflowX: 'hidden' }}>
+      <Box
+        sx={{
+          width: '100%',
+          maxWidth: 480,
+          minWidth: { xs: '90vw', sm: 400 },
+          mx: 'auto',
+          boxSizing: 'border-box',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          py: 4,
+        }}
+      >
         <Typography variant="h4" align="center" fontWeight={700} mb={4}>
           Learn: Key Stock Market Terms
         </Typography>
@@ -99,3 +112,5 @@ export default function Learn() {
     </Box>
   );
 }
+
+// No currency values to update in this file. No changes needed for Rupee or formatRupee.
