@@ -1,20 +1,13 @@
-import { Box, Alert } from '@mui/material';
+import React from 'react';
+import { Typography, Layout } from 'antd';
 import PropTypes from 'prop-types';
 export default function Error({ message }) {
   return (
-    <Box sx={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      minHeight: '60vh',
-      width: '100vw',
-      height: '100vh',
-      maxWidth: 480,
-      mx: 'auto',
-      boxSizing: 'border-box',
-    }}>
-      <Alert severity="error">{message}</Alert>
-    </Box>
+    <Layout style={{ minHeight: '100vh', width: '100vw', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#fff' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+        <Typography.Text type="danger">{message}</Typography.Text>
+      </div>
+    </Layout>
   );
 }
 Error.propTypes = {

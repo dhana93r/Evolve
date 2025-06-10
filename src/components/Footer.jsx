@@ -1,21 +1,14 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Typography, Layout } from 'antd';
+
+const { Footer: AntFooter } = Layout;
 
 const Footer = () => (
-  <Box component="footer" sx={{
-    width: '100%',
-    py: 2,
-    bgcolor: 'background.paper',
-    textAlign: 'center',
-    borderTop: '1px solid #eee',
-    mt: 'auto',
-    fontSize: '0.95rem',
-    color: 'text.secondary',
-  }}>
-    <Typography variant="body2">
+  <AntFooter style={{ width: '100%', textAlign: 'center', fontSize: '0.95rem', color: '#888', background: '#fff', padding: 16 }}>
+    <Typography.Text type="secondary">
       © {new Date().getFullYear()} Evolve. All rights reserved.
-    </Typography>
-  </Box>
+    </Typography.Text>
+  </AntFooter>
 );
 
 export default Footer;

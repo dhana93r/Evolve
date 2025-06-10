@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Typography, Box as MuiBox, Typography as MuiTypography, TextField, InputAdornment, MenuItem, Select, FormControl, InputLabel, Pagination, Stack } from '@mui/material';
-import { EvolveTable, EvolveButton } from '../components';
+import { Typography, Input, Select, Pagination, Table, Row, Col, Layout } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
-import SearchIcon from '@mui/icons-material/Search';
 import { useStocks } from '../hooks/useStocks';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
-import Box from '@mui/material/Box';
 import Rupee from '../components/Rupee';
 import { formatRupee } from '../utils/rupee';
+
+const { Option } = Select;
+const { Content } = Layout;
 
 const Stocks = () => {
   const { stocks, loading, error } = useStocks();
@@ -24,120 +25,102 @@ const Stocks = () => {
     return Array.from(inds).sort();
   }, [stocks]);
 
-  // Filter and search logic
-  const filteredStocks = React.useMemo(() => stocks.filter((stock) => {
-    const matchesSearch = stock.name.toLowerCase().includes(search.toLowerCase()) || stock.symbol.toLowerCase().includes(search.toLowerCase());
-    const matchesIndustry = !industry || stock.industry === industry;
-    return matchesSearch && matchesIndustry;
-  }), [stocks, search, industry]);
+  // Filtered and paginated stocks
+  const filteredStocks = React.useMemo(() => {
+    let filtered = stocks;
+    if (search) {
+      filtered = filtered.filter(
+        (s) =>
+          s.name.toLowerCase().includes(search.toLowerCase()) ||
+          s.symbol.toLowerCase().includes(search.toLowerCase())
+      );
+    }
+    if (industry) {
+      filtered = filtered.filter((s) => s.industry === industry);
+    }
+    return filtered;
+  }, [stocks, search, industry]);
 
-  // Pagination logic
-  const paginatedStocks = React.useMemo(() => filteredStocks.slice((page - 1) * rowsPerPage, page * rowsPerPage), [filteredStocks, page, rowsPerPage]);
   const pageCount = Math.ceil(filteredStocks.length / rowsPerPage);
+  const paginatedStocks = React.useMemo(() => {
+    const start = (page - 1) * rowsPerPage;
+    return filteredStocks.slice(start, start + rowsPerPage);
+  }, [filteredStocks, page, rowsPerPage]);
 
   const columns = [
-    { id: 'name', label: 'Name', align: 'center', sx: { fontSize: { xs: '0.95rem', sm: '1rem' }, px: { xs: 0.5, sm: 2 } } },
-    { id: 'industry', label: 'Industry', align: 'center', sx: { fontSize: { xs: '0.95rem', sm: '1rem' }, px: { xs: 0.5, sm: 2 } } },
-    { id: 'price', label: 'Current Price', align: 'center', sx: { fontSize: { xs: '0.95rem', sm: '1rem' }, px: { xs: 0.5, sm: 2 } }, render: row => <><Rupee size={15} /> {formatRupee(row.price)}</> },
+    { title: 'Name', dataIndex: 'name', key: 'name', align: 'center' },
+    { title: 'Industry', dataIndex: 'industry', key: 'industry', align: 'center' },
+    { title: 'Current Price', dataIndex: 'price', key: 'price', align: 'center', render: (price) => <><Rupee size={15} /> {formatRupee(price)}</> },
+    {
+      title: 'Action',
+      key: 'action',
+      align: 'center',
+      render: (_, row) => (
+        <button className="ant-btn ant-btn-default" style={{ margin: 0 }} onClick={() => navigate(`/stocks/${row.symbol}`)}>
+          View
+        </button>
+      ),
+    },
   ];
 
-  if (loading) {
-    return <Loading />;
-  }
-  if (error) {
-    return <Error message={error} />;
-  }
+  if (loading) return <Loading />;
+  if (error) return <Error message={error} />;
 
   return (
-    <Box
-      sx={{
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        px: { xs: 1, sm: 2 },
-        width: '100vw',
-        boxSizing: 'border-box',
-        overflowX: 'hidden',
-        bgcolor: 'background.default',
-      }}
-    >
-      <Box
-        sx={{
-          width: '100%',
-          maxWidth: 480,
-          minWidth: { xs: '90vw', sm: 400 },
-          mx: 'auto',
-          boxSizing: 'border-box',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          py: 4,
-        }}
-      >
-        <Typography variant="h4" fontWeight={700} gutterBottom align="center" sx={{ fontSize: { xs: '1.5rem', sm: '2.1rem' } }}>
-          All NSE India Stocks
-        </Typography>
-        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ mb: 3, width: '100%', justifyContent: 'center' }}>
-          <TextField
-            variant="outlined"
-            size="small"
-            placeholder="Search by name or symbol"
-            value={search}
-            onChange={(e) => { setSearch(e.target.value); setPage(1); }}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <SearchIcon />
-                </InputAdornment>
-              ),
-            }}
-            sx={{ minWidth: 200 }}
-          />
-          <FormControl size="small" sx={{ minWidth: 180 }}>
-            <InputLabel>Industry</InputLabel>
-            <Select
-              value={industry}
-              label="Industry"
-              onChange={(e) => { setIndustry(e.target.value); setPage(1); }}
-            >
-              <MenuItem value="">All Industries</MenuItem>
-              {industries.map((ind) => (
-                <MenuItem key={ind} value={ind}>{ind}</MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-        </Stack>
-        <EvolveTable
-          columns={columns}
-          rows={paginatedStocks}
-          getRowKey={(row) => `${row.symbol}_${row.name}`}
-          renderActions={(row) => (
-            <EvolveButton sx={{ mt: 1 }} onClick={() => navigate(`/stocks/${row.symbol}`)}>
-              View
-            </EvolveButton>
-          )}
-          loading={loading}
-          emptyMessage="No stocks found."
-          enableStriped={true}
-          enableHover={true}
-        />
-        {pageCount > 1 && (
-          <Stack alignItems="center" sx={{ mt: 3 }}>
-            <Pagination
-              count={pageCount}
-              page={page}
-              onChange={(_, value) => setPage(value)}
-              color="primary"
-              shape="rounded"
-              showFirstButton
-              showLastButton
+    <Layout style={{ minHeight: '100vh', background: '#fff' }}>
+      <Content style={{ width: '100vw', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'flex-start', background: '#fff' }}>
+        <Row justify="center" style={{ width: '100%' }}>
+          <Col xs={24} sm={20} md={16} lg={12} xl={10} style={{ marginTop: 40 }}>
+            <Typography.Title level={4} style={{ textAlign: 'center', marginBottom: 32, fontWeight: 700 }}>
+              All NSE India Stocks
+            </Typography.Title>
+            <div style={{ display: 'flex', flexDirection: 'row', gap: 16, marginBottom: 24, width: '100%', justifyContent: 'center' }}>
+              <Input
+                placeholder="Search by name or symbol"
+                value={search}
+                onChange={e => { setSearch(e.target.value); setPage(1); }}
+                prefix={<SearchOutlined />}
+                style={{ minWidth: 200 }}
+                allowClear
+              />
+              <Select
+                value={industry}
+                onChange={value => { setIndustry(value); setPage(1); }}
+                style={{ minWidth: 180 }}
+                placeholder="All Industries"
+                allowClear
+              >
+                <Option value="">All Industries</Option>
+                {industries.map((ind) => (
+                  <Option key={ind} value={ind}>{ind}</Option>
+                ))}
+              </Select>
+            </div>
+            <Table
+              columns={columns}
+              dataSource={paginatedStocks}
+              rowKey={row => `${row.symbol}_${row.name}`}
+              pagination={false}
+              bordered
+              size="middle"
+              style={{ background: '#fff', borderRadius: 12, boxShadow: '0 2px 8px #f0f1f2', margin: '0 auto' }}
+              locale={{ emptyText: 'No stocks found.' }}
             />
-          </Stack>
-        )}
-      </Box>
-    </Box>
+            {pageCount > 1 && (
+              <div style={{ marginTop: 24, textAlign: 'center' }}>
+                <Pagination
+                  current={page}
+                  total={filteredStocks.length}
+                  pageSize={rowsPerPage}
+                  onChange={setPage}
+                  showSizeChanger={false}
+                />
+              </div>
+            )}
+          </Col>
+        </Row>
+      </Content>
+    </Layout>
   );
 };
 

@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Alert, Collapse, IconButton } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
+import { Alert } from 'antd';
+import PropTypes from 'prop-types';
 
-export default function EvolveAlert({ id, severity = 'warning', title, children, sx, onClose }) {
+export default function EvolveAlert({ id, severity = 'warning', title, children, onClose }) {
   const [open, setOpen] = React.useState(true);
 
   const handleClose = () => {
@@ -14,25 +14,24 @@ export default function EvolveAlert({ id, severity = 'warning', title, children,
     setOpen(true);
   }, [id]);
 
+  if (!open) return null;
+
   return (
-    <Collapse in={open}>
-      <Alert
-        severity={severity}
-        sx={sx}
-        action={
-          <IconButton
-            aria-label="close"
-            color="inherit"
-            size="small"
-            onClick={handleClose}
-          >
-            <CloseIcon fontSize="inherit" />
-          </IconButton>
-        }
-      >
-        {title && <strong>{title}</strong>}
-        {children}
-      </Alert>
-    </Collapse>
+    <Alert
+      message={title}
+      description={children}
+      type={severity}
+      closable={!!onClose}
+      onClose={handleClose}
+      showIcon
+      closeIcon={false} // Force only one close icon
+    />
   );
 }
+
+EvolveAlert.propTypes = {
+  severity: PropTypes.string,
+  title: PropTypes.string,
+  children: PropTypes.node,
+  onClose: PropTypes.func,
+};

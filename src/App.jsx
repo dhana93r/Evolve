@@ -2,27 +2,12 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Welcome, Stocks, StockDetails, CompanyDetails, Learn, CompanyGroupProfile } from './pages';
 import { DashboardLayout } from './layout';
-import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
-
-const theme = createTheme({
-  palette: {
-    mode: 'light',
-    primary: { main: '#1976d2' },
-    secondary: { main: '#bfa46f' },
-  },
-  shape: { borderRadius: 16 },
-  typography: {
-    fontFamily: 'Inter, Roboto, Arial, sans-serif',
-    h1: { fontWeight: 700 },
-    h2: { fontWeight: 600 },
-    body1: { lineHeight: 1.7 },
-  },
-});
+import 'antd/dist/reset.css';
+import { ConfigProvider } from 'antd';
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+    <ConfigProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Welcome />} />
@@ -43,7 +28,7 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
-    </ThemeProvider>
+    </ConfigProvider>
   );
 }
 

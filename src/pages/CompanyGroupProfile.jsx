@@ -1,8 +1,10 @@
 import React from 'react';
-import { Typography, Box, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Typography, Collapse } from 'antd';
+import { CaretRightOutlined } from '@ant-design/icons';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
+
+const { Panel } = Collapse;
 
 // Tata group structure for Accordions
 const tataSegments = [
@@ -145,105 +147,104 @@ const tataSegments = [
 
 function CompanyAccordion({ segment }) {
 	return (
-		<Accordion TransitionProps={{ unmountOnExit: true }}>
-			<AccordionSummary expandIcon={<ExpandMoreIcon />}>
-				<Typography fontWeight={600}>{segment.label}</Typography>
-			</AccordionSummary>
-			<AccordionDetails>
-				{segment.companies.map((company, idx) =>
+		<Collapse
+			bordered={false}
+			expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
+			style={{ marginBottom: 8 }}
+			showArrow={true} // Ensure only one arrow is shown
+		>
+			<Panel header={<Typography.Text strong>{segment.label}</Typography.Text>} key={segment.label}>
+				{segment.companies.map((company) =>
 					company.subs ? (
-						<Accordion
+						<Collapse
+							bordered={false}
+							expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
+							style={{ marginBottom: 8, marginLeft: 16 }}
 							key={company.label}
-							sx={{ mb: 1 }}
-							TransitionProps={{ unmountOnExit: true }}
+							showArrow={true} // Ensure only one arrow is shown
 						>
-							<AccordionSummary expandIcon={<ExpandMoreIcon />}>
-								<Typography>{company.label}</Typography>
-							</AccordionSummary>
-							<AccordionDetails>
-								{company.subs.map((sub, subIdx) => (
-									<Typography
-										key={sub.label}
-										sx={{ ml: 2, mb: 0.5 }}
-										variant="body2"
-									>
+							<Panel header={company.label} key={company.label}>
+								{company.subs.map((sub) => (
+									<Typography.Text key={sub.label} style={{ marginLeft: 16, display: 'block' }}>
 										{sub.label}
-									</Typography>
+									</Typography.Text>
 								))}
-							</AccordionDetails>
-						</Accordion>
+							</Panel>
+						</Collapse>
 					) : (
-						<Typography
-							key={company.label}
-							sx={{ ml: 1, mb: 0.5 }}
-							variant="body2"
-						>
+						<Typography.Text key={company.label} style={{ marginLeft: 8, display: 'block' }}>
 							{company.label}
-						</Typography>
+						</Typography.Text>
 					)
 				)}
-			</AccordionDetails>
-		</Accordion>
+			</Panel>
+		</Collapse>
 	);
 }
 
 export default function CompanyGroupProfile() {
 	return (
-		<Box
-			sx={{
+		<div
+			style={{
 				minHeight: '100vh',
 				display: 'flex',
 				flexDirection: 'column',
 				justifyContent: 'center',
 				alignItems: 'center',
-				px: { xs: 1, sm: 2 },
 				width: '100vw',
 				boxSizing: 'border-box',
 				overflowX: 'hidden',
-				bgcolor: 'background.default',
+				background: '#fff',
 			}}
 		>
-			<Box
-				sx={{
+			<div
+				style={{
 					width: '100%',
 					maxWidth: 480,
-					minWidth: { xs: '90vw', sm: 400 },
-					mx: 'auto',
+					margin: '0 auto',
 					boxSizing: 'border-box',
 					display: 'flex',
 					flexDirection: 'column',
 					alignItems: 'center',
-					py: 4,
+					padding: 32,
 				}}
 			>
-				<Typography variant="h4" fontWeight={700} align="center" mb={4}>
+				<Typography.Title
+					level={4}
+					style={{
+						textAlign: 'center',
+						marginBottom: 32,
+						fontWeight: 700,
+					}}
+				>
 					Group companies information
-				</Typography>
-				<Box
-					sx={{
+				</Typography.Title>
+				<div
+					style={{
 						width: '100%',
-						maxWidth: { xs: '100%', sm: '900px' },
-						mx: 'auto',
-						boxShadow: { xs: 0, md: 2 },
-						borderRadius: { xs: 0, sm: 2 },
-						bgcolor: 'background.paper',
+						maxWidth: 900,
+						margin: '0 auto',
+						background: '#fff',
+						borderRadius: 8,
 						boxSizing: 'border-box',
 						overflowX: 'hidden',
 					}}
 				>
-					<Accordion defaultExpanded TransitionProps={{ unmountOnExit: true }} sx={{ width: '100%' }}>
-						<AccordionSummary expandIcon={<ExpandMoreIcon />}>
-							<Typography fontWeight={700}>Tata Sons</Typography>
-						</AccordionSummary>
-						<AccordionDetails>
+					<Collapse
+						defaultActiveKey={[tataSegments[0]?.label]}
+						expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
+						style={{ width: '100%' }}
+						showArrow={true} // Ensure only one arrow is shown
+					>
+						<Panel header={<Typography.Text strong>Tata Sons</Typography.Text>} key="Tata Sons">
 							{tataSegments.map((segment) => (
 								<CompanyAccordion key={segment.label} segment={segment} />
 							))}
-						</AccordionDetails>
-					</Accordion>
-				</Box>
-			</Box>
-		</Box>
+						</Panel>
+					</Collapse>
+				</div>
+			</div>
+		</div>
 	);
 }
 
